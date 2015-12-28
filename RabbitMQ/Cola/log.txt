@@ -1,0 +1,5 @@
+ [*] Waiting for logs. To exit press CTRL+C
+ [x] 'rabbit.orange.rabbit':'Hello World!'
+ [x] 'rabbit.orange.rabbit':'Hello World!'
+ [x] 'rabbit.orange.rabbit':'Hello World!'
+ [x] 'rabbit.orange.rabbit':'Hello World!'
