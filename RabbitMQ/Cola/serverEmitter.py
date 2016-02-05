@@ -7,12 +7,21 @@ import pika
 import sys
 
 
-connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+credentials = pika.PlainCredentials('cupula', '1234')
+connection = pika.BlockingConnection(pika.ConnectionParameters(
+        c.dictIP['servidorIP'],
+        5672,
+        'Cupula',
+        credentials))
 channel = connection.channel()
 targ=sys.argv[1]
+my_dict={}
+d={}
+for x in c.listaNodos:
+    n='c.lista'+x
+    my_dict[x]=n
 
-my_dict={'meteor': c.listaMeteor,'cupula': c.listaCupula}
-for x in my_dict[targ]:
+for x in eval(my_dict[targ]):
     channel.queue_declare(queue=x+"_queue",durable=True)
     message = ' '.join(sys.argv[2:])
     channel.basic_publish(exchange='',routing_key=x+"_queue",body=message)

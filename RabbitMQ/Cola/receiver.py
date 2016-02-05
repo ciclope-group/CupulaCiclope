@@ -3,7 +3,12 @@ import pika
 import time
 import config as c
 
-connection = pika.BlockingConnection(pika.ConnectionParameters(host=c.servidorIP))
+credentials = pika.PlainCredentials('cupula', '1234')
+connection = pika.BlockingConnection(pika.ConnectionParameters(
+        c.dictIP['servidorIP'],
+        5672,
+        'Cupula',
+        credentials))
 channel = connection.channel()
 
 channel.queue_declare(queue=c.me+"_queue",durable=True)
