@@ -56,6 +56,11 @@ def callback(ch, method, properties, body):
         #---------Se verifica que el nodo no esta incluido en listaNodos------------
         for x in c.listaNodos:
             if x.find(node)!=-1:
+                body=body.split()
+                body.insert(0,"-direct Server reported an error: Node already exists.")
+                body=' '.join(body)
+                t=threading.Thread(target=send, kwargs=dict(routing=node, message=body))
+                t.start()
                 return
         outfile = open('log.txt', 'a')
         logMessage="[X] New node called "+node + " joined on " + time.strftime("%H:%M:%S")+" " + time.strftime("%d/%m/%Y")
@@ -70,8 +75,12 @@ def callback(ch, method, properties, body):
             if x.find(node)!=-1:
                 finded=1
         if finded==0:
+            body=body.split()
+            body.insert(0,"-direct Server reported an error: Node is not on the list.")
+            body=' '.join(body)
             t=threading.Thread(target=send, kwargs=dict(routing=node, message=body))
             t.start()
+            return
         rest=" ".join(words[2:])
         outfile = open('log.txt', 'a')
         logMessage="[X] Modifying node "+node + " at " + time.strftime("%H:%M:%S")+" " + time.strftime("%d/%m/%Y")
@@ -86,8 +95,12 @@ def callback(ch, method, properties, body):
             if x.find(node)!=-1:
                 finded=1
         if finded==0:
+            body=body.split()
+            body.insert(0,"-direct Server reported an error: Node doesn't exists.")
+            body=' '.join(body)
             t=threading.Thread(target=send, kwargs=dict(routing=node, message=body))
             t.start()
+            return
         rest=" ".join(words[2:])
         outfile = open('log.txt', 'a')
         logMessage="[X] Deleting node "+node + " at " + time.strftime("%H:%M:%S")+" " + time.strftime("%d/%m/%Y")
