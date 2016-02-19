@@ -3,7 +3,7 @@
 
 ##Purpose of the project
 
-In this project we wil develop several aplicattion and utilities to use in a real observatory located in the CEI Montegancedo - Universidad Politécnica de Madrid.
+In this project we wil develop several aplications and utilities to use in a real observatory located in the CEI Montegancedo - Universidad Politécnica de Madrid.
 We are developing several controlers for the dome, the telescope and a meteor station.
 
 ##Progress
