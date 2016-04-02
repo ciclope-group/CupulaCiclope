@@ -33,7 +33,6 @@ def command():
 		print message
 		print 'Enviado'
 		ser.write(message)
-		#return redirect(url_for('command'))
 	return render_template('command.html', error=error)	
 
 @app.route('/login', methods=['GET', 'POST'])
