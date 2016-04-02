@@ -28,6 +28,12 @@ except AttributeError:
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
+	username = raw_input('User: ')
+	password = raw_input('Password: ')	
+	username = str(username)
+	password = str(password)
+	r = requests.post('http://192.168.1.239:4000/login', data = {'username':username, 'password':password})
+	print r
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(1023, 391)
         self.label = QtGui.QLabel(Dialog)
