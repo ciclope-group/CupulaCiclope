@@ -5,7 +5,7 @@ from flask import Flask, request, session, g, redirect, url_for, \
 	 abort, render_template, flash, Response
 from contextlib import closing
 import serial
-import os
+import subprocess
 
 from camera import VideoCamera
 # configuration
@@ -20,9 +20,10 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 app.config['DEBUG'] = True
 app.config['SECRET_KEY'] = 'some_really_long_random_string_here'
 logged= None
-def send(message):
-	message= "~/TFG/CupulaCiclope/Servidor/InterfazIO/serialSend.py " + message
-	os.system(message)
+ser = serial.Serial('/dev/ttyACM0', 9600)
+def send(message,ser):
+	message='&'+message+'#'
+	ser.write(message)
 
 @app.route('/command', methods=['GET','POST'])
 def command():
@@ -32,11 +33,10 @@ def command():
 		abort(401)
 	if request.method == 'POST':
 		message=request.form['command']
-		message = '&'+str(message)+ '#'
 		print message
-		print 'Enviado'
-		t = threading.Thread(target=send, args=(message,))
-    	t.start()
+		#print 'Enviado'
+		t = threading.Thread(target=send, args=(message,ser,))
+    		t.start()
 		#ser.write(message)
 	return render_template('command.html', error=error)	
 
