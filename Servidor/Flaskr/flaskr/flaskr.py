@@ -5,6 +5,7 @@ from flask import Flask, request, session, g, redirect, url_for, \
 	 abort, render_template, flash, Response
 from contextlib import closing
 import serial
+import os
 
 from camera import VideoCamera
 # configuration
@@ -18,9 +19,11 @@ app = Flask(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 app.config['DEBUG'] = True
 app.config['SECRET_KEY'] = 'some_really_long_random_string_here'
-ser = serial.Serial('/dev/ttyACM0', 9600)
 logged= None
-	
+def send(message):
+	message= "~/TFG/CupulaCiclope/Servidor/InterfazIO/serialSend.py " + message
+	os.system(message)
+
 @app.route('/command', methods=['GET','POST'])
 def command():
 	error=None
@@ -32,7 +35,9 @@ def command():
 		message = '&'+str(message)+ '#'
 		print message
 		print 'Enviado'
-		ser.write(message)
+		t = threading.Thread(target=send, args=(message,))
+    	t.start()
+		#ser.write(message)
 	return render_template('command.html', error=error)	
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -60,5 +65,6 @@ def logout():
 	#session.pop('logged_in', None)
 	flash('You were logged out')
 	return redirect(url_for('show_entries'))
+
 if __name__ == '__main__':
 	app.run(host='0.0.0.0',port=4000)    
