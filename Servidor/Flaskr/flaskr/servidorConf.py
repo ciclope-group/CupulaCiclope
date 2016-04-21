@@ -1,3 +1,3 @@
-camera=1
-board=0
+camera=0
+board=1
 

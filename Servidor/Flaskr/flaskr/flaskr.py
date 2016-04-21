@@ -7,8 +7,7 @@ from contextlib import closing
 import serial
 import subprocess
 import os
-
-from camera import VideoCamera
+import functions as f
 # configuration
 DATABASE = '/tmp/flaskr.db'
 DEBUG = True
@@ -25,19 +24,12 @@ if servidorConf.board==1:
 	ser = serial.Serial('/dev/ttyACM0', 9600)
 else:	
 	print 'Controller board is not activated'
-def cameraServer():
-	os.chdir("/home/trex/TFG/mjpg/mjpg-streamer/")
-        print('Video streaming starting on pid',  os.getpid())
-        os.system('/home/trex/TFG/mjpg/mjpg-streamer/mjpg_streamer -i "./input_uvc.so -d /dev/video0" -o "./output_http.so -w ./www" ')
 
 if servidorConf.camera==1:
 	newPid=os.fork()
 	if newPid==0:
-		cameraServer()	
-def send(message,ser):
-	if servidorConf.board==1:
-		message='&'+message+'#'
-		ser.write(message)
+		f.cameraServer()	
+
 
 
 @app.route('/command', methods=['GET','POST'])
@@ -50,7 +42,7 @@ def command():
 		message=request.form['command']
 		print message
 		#print 'Enviado'
-		t = threading.Thread(target=send, args=(message,ser,))
+		t = threading.Thread(target=f.send, args=(message,ser,))
     		t.start()
 		#ser.write(message)
 	return render_template('command.html', error=error)	

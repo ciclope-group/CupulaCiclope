@@ -28,12 +28,12 @@ except AttributeError:
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
-	username = raw_input('User: ')
-	password = raw_input('Password: ')	
-	username = str(username)
-	password = str(password)
-	r = requests.post('http://192.168.1.239:4000/login', data = {'username':username, 'password':password})
-	print r
+    	username = raw_input('User: ')
+    	password = raw_input('Password: ')	
+    	username = str(username)
+    	password = str(password)
+        r = requests.post('http://192.168.1.239:4000/login', data = {'username':username, 'password':password})
+    	print r
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(1023, 391)
         self.label = QtGui.QLabel(Dialog)
@@ -491,76 +491,67 @@ class Ui_Dialog(object):
         self.pushButton_6 = QtGui.QPushButton(Dialog)
         self.pushButton_6.setGeometry(QtCore.QRect(230, 210, 85, 27))
         self.pushButton_6.setObjectName(_fromUtf8("pushButton_6"))
-	self.timer = QtCore.QTimer()
-	self.timer.timeout.connect(self.constantUpdate)
-	self.timer.start(20)
-	
-
+        self.timer = QtCore.QTimer()
+        self.timer.timeout.connect(self.constantUpdate)
+        self.timer.start(20)
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
     def retranslateUi(self, Dialog):
-	Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
-	self.label.setText(_translate("Dialog", "Control Manual", None))
-	self.pushButton.setText(_translate("Dialog", "Rotar derecha", None))
-	self.pushButton.clicked.connect(self.rDerecha)
-	self.pushButton_2.setText(_translate("Dialog", "PARADA EMERGENCIA", None))
-	self.pushButton_2.clicked.connect(self.paradaEmergencia)
-	self.pushButton_3.setText(_translate("Dialog", "Rotar Izquierda", None))
-	self.pushButton_3.clicked.connect(self.rIzquierda)
-	self.label_2.setText(_translate("Dialog", "Comando Manual:", None))
-	self.pushButton_4.setText(_translate("Dialog", "Enviar", None))
-	self.pushButton_4.clicked.connect(self.enviar)
-	self.pushButton_5.setText(_translate("Dialog", "Parada Ligera", None))
-	self.pushButton_5.clicked.connect(self.parada)
-  	self.pushButton_6.setText(_translate("Dialog", "Refresh", None))
-	#self.pushButton_6.clicked.connect(self.refresh)
+    	Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
+    	self.label.setText(_translate("Dialog", "Control Manual", None))
+    	self.pushButton.setText(_translate("Dialog", "Rotar derecha", None))
+    	self.pushButton.clicked.connect(self.rDerecha)
+    	self.pushButton_2.setText(_translate("Dialog", "PARADA EMERGENCIA", None))
+    	self.pushButton_2.clicked.connect(self.paradaEmergencia)
+    	self.pushButton_3.setText(_translate("Dialog", "Rotar Izquierda", None))
+    	self.pushButton_3.clicked.connect(self.rIzquierda)
+    	self.label_2.setText(_translate("Dialog", "Comando Manual:", None))
+    	self.pushButton_4.setText(_translate("Dialog", "Enviar", None))
+    	self.pushButton_4.clicked.connect(self.enviar)
+    	self.pushButton_5.setText(_translate("Dialog", "Parada Ligera", None))
+    	self.pushButton_5.clicked.connect(self.parada)
+      	self.pushButton_6.setText(_translate("Dialog", "Refresh", None))
+    	#self.pushButton_6.clicked.connect(self.refresh)
 		
-	
-
     def paradaEmergencia(self):
-	print "Parada de Emergencia"
-	message='I'
-	r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
-	print r
+        print "Parada de Emergencia"
+        message='I'
+        r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
+        print r
 
     def parada(self):
-	print "Parada"
-	message='S'
-	r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
-	print r
+        print "Parada"
+        message='S'
+        r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
+        print r
     def rDerecha(self):
-	print "Rotando derecha"
-	message='R'
-	message=str(message)
-	r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
-	print r
+        print "Rotando derecha"
+        message='R'
+        message=str(message)
+        r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
+        print r
     def rIzquierda(self):
-	print "Rotando Izquierda"
-	message='L'
-	r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
-	print r
+        print "Rotando Izquierda"
+        message='L'
+        r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
+        print r
     def home(self):
-	print "Ir a Home"
-	message='H'
-	r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
-	print r
+        print "Ir a Home"
+        message='H'
+        r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
+        print r
     def enviar(self):
-	message=self.lineEdit.text()
-	#message='&'+str(message)+'#'
-	print message
-	r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
-	print r
+        message=self.lineEdit.text()
+        #message='&'+str(message)+'#'
+        print message
+        r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
+        print r
     def constantUpdate(self):
-	file = cStringIO.StringIO(urllib.urlopen("http://192.168.1.239:8080/?action=snapshot").read())
-	img = Image.open(file)
-	img.save('/tmp/outfile.png')
+        file = cStringIO.StringIO(urllib.urlopen("http://192.168.1.239:8080/?action=snapshot").read())
+        img = Image.open(file)
+        img.save('/tmp/outfile.png')
         self.label_3.setPixmap(QtGui.QPixmap(_fromUtf8('/tmp/outfile.png')))
-	self.label_3.setScaledContents(True)
+        self.label_3.setScaledContents(True)
         self.label_3.setOpenExternalLinks(False)
         self.label_3.setObjectName(_fromUtf8("label_3"))
-    
-
-
-
-      
-
+ 
