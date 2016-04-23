@@ -1,26 +1,49 @@
 # all the imports
+import servidorConf
 import threading
-import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, \
 	 abort, render_template, flash, Response
 from contextlib import closing
 import serial
-
-from camera import VideoCamera
+import subprocess
+import os,sys
+import functions as f
+		
 # configuration
 DATABASE = '/tmp/flaskr.db'
-DEBUG = True
+DEBUG = False
 SECRET_KEY = 'development key'
 USERNAME = 'admin'
 PASSWORD = 'default'
 # create our little application :)
 app = Flask(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-app.config['DEBUG'] = True
+app.config['DEBUG'] = False
 app.config['SECRET_KEY'] = 'some_really_long_random_string_here'
-ser = serial.Serial('/dev/ttyACM0', 9600)
 logged= None
+
+if servidorConf.camera==1:
+	print "Camara activa"
+	newPid2=os.fork()	
+	if newPid2==0:
+                f.cameraServer()
+                sys.exit()
+if servidorConf.board==1:
+	ser = serial.Serial('/dev/ttyACM0', 9600)
+	t=threading.Thread(target=f.checkRoutine,args=(ser,))
+	t.start()
+
 	
+	"""newPid2=os.fork()
+	if newPid2==0:
+                f.checkRoutine(ser)
+                sys.exit()"""
+	
+else:	
+	print 'Controller board is not activated'
+
+
+print "Prueba"
 @app.route('/command', methods=['GET','POST'])
 def command():
 	error=None
@@ -29,11 +52,11 @@ def command():
 		abort(401)
 	if request.method == 'POST':
 		message=request.form['command']
-		message = '&'+str(message)+ '#'
 		print message
-		print 'Enviado'
-		ser.write(message)
-		#return redirect(url_for('command'))
+		#print 'Enviado'
+		t = threading.Thread(target=f.send, args=(message,ser,))
+    		t.start()
+		#ser.write(message)
 	return render_template('command.html', error=error)	
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -61,5 +84,8 @@ def logout():
 	#session.pop('logged_in', None)
 	flash('You were logged out')
 	return redirect(url_for('show_entries'))
+  
+
 if __name__ == '__main__':
-	app.run(host='0.0.0.0',port=4000)    
+	app.run(host='0.0.0.0',port=4000)
+	    
