@@ -6,32 +6,44 @@ from flask import Flask, request, session, g, redirect, url_for, \
 from contextlib import closing
 import serial
 import subprocess
-import os
+import os,sys
 import functions as f
+		
 # configuration
 DATABASE = '/tmp/flaskr.db'
-DEBUG = True
+DEBUG = False
 SECRET_KEY = 'development key'
 USERNAME = 'admin'
 PASSWORD = 'default'
 # create our little application :)
 app = Flask(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-app.config['DEBUG'] = True
+app.config['DEBUG'] = False
 app.config['SECRET_KEY'] = 'some_really_long_random_string_here'
 logged= None
+
+if servidorConf.camera==1:
+	print "Camara activa"
+	newPid2=os.fork()	
+	if newPid2==0:
+                f.cameraServer()
+                sys.exit()
 if servidorConf.board==1:
 	ser = serial.Serial('/dev/ttyACM0', 9600)
+	t=threading.Thread(target=f.checkRoutine,args=(ser,))
+	t.start()
+
+	
+	"""newPid2=os.fork()
+	if newPid2==0:
+                f.checkRoutine(ser)
+                sys.exit()"""
+	
 else:	
 	print 'Controller board is not activated'
 
-if servidorConf.camera==1:
-	newPid=os.fork()
-	if newPid==0:
-		f.cameraServer()	
 
-
-
+print "Prueba"
 @app.route('/command', methods=['GET','POST'])
 def command():
 	error=None
@@ -75,4 +87,5 @@ def logout():
   
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0',port=4000)    
+	app.run(host='0.0.0.0',port=4000)
+	    
