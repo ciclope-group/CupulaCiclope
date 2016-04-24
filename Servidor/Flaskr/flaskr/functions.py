@@ -24,15 +24,17 @@ def checkRoutine(ser):
 	
 
 def test(ser):     
-	ser.write("&R#")
+	ser.write("&G#")
 	t2 = threading.Timer(0.5, alarma)
 	t2.daemon=True
 	t2.start()	
 	sArduino =str(ser.readline())
-	print sArduino
-	if sArduino==str("OK\r\n"):
-		print "Entro"
+	sArduino = sArduino[1:-3]
+	if 'GLS' in sArduino:
+		print sArduino
 		t2.cancel()
+	
+	
 def alarma():
 	print "Alarma"
 	
