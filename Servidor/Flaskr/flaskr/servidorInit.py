@@ -33,8 +33,8 @@ if sc.camera==1:
 	newPid2=os.fork()	
 	if newPid2==0:
 		print "Launched camera server"
-        f.cameraServer()
-        sys.exit()
+        	f.cameraServer()
+        	sys.exit()
 
 #Launching Comunication with board if sc.boardPort is active                
 if sc.board==1:
@@ -66,7 +66,7 @@ def command():
 		print message
 		#print 'Enviado'
 		t = threading.Thread(target=f.send, args=(message,ser,))
-    	t.start()
+    		t.start()
 		#ser.write(message)
 	return render_template('command.html', error=error)	
 
