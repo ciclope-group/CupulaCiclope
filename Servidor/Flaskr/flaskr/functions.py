@@ -18,14 +18,23 @@ def checkRoutine(ser):
 	test(ser)
 	t = threading.Timer(5.0, checkRoutine, [ser])
 	t.daemon = True
-        t.start()
+	t.start()
+
         
 	
 
 def test(ser):     
-	ser.write('&R#')
-	time.sleep(5)
-	ser.write('&I#')
+	ser.write("&R#")
+	t2 = threading.Timer(0.5, alarma)
+	t2.daemon=True
+	t2.start()	
+	sArduino =str(ser.readline())
+	print sArduino
+	if sArduino==str("OK\r\n"):
+		print "Entro"
+		t2.cancel()
+def alarma():
+	print "Alarma"
 	
 
 
