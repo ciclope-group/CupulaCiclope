@@ -1,5 +1,7 @@
+#! /usr/bin/env python
+
 # all the imports
-import servidorConf
+import servidorConf as sc
 import threading
 from flask import Flask, request, session, g, redirect, url_for, \
 	 abort, render_template, flash, Response
@@ -8,42 +10,47 @@ import serial
 import subprocess
 import os,sys
 import functions as f
+
+
 		
+
 # configuration
 DATABASE = '/tmp/flaskr.db'
 DEBUG = False
 SECRET_KEY = 'development key'
 USERNAME = 'admin'
 PASSWORD = 'default'
-# create our little application :)
+# Starting our application
 app = Flask(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
+#Debug var
 app.config['DEBUG'] = False
 app.config['SECRET_KEY'] = 'some_really_long_random_string_here'
 logged= None
 
-if servidorConf.camera==1:
-	print "Camara activa"
+#def initServer():
+#Launching Camera server if sc.camera variable is active
+if sc.camera==1:
 	newPid2=os.fork()	
 	if newPid2==0:
-                f.cameraServer()
-                sys.exit()
-if servidorConf.board==1:
-	ser = serial.Serial('/dev/ttyACM0', 9600)
-	t=threading.Thread(target=f.checkRoutine,args=(ser,))
+		print "Launched camera server"
+		f.cameraServer()
+		sys.exit()
+	else:
+		print newPid2
+#Launching Comunication with board if sc.boardPort is active                
+if sc.board==1:
+	ser = serial.Serial(sc.boardPort, 9600,timeout=3)
+	t=threading.Timer(2,f.checkRoutine,args=(ser,))
+	t.daemon=True
 	t.start()
-
-	
-	"""newPid2=os.fork()
-	if newPid2==0:
-                f.checkRoutine(ser)
-                sys.exit()"""
+	print "Launched comunication with board"
 	
 else:	
-	print 'Controller board is not activated'
+	print 'Controller board variable is not activated'
 
 
-print "Prueba"
+
 @app.route('/command', methods=['GET','POST'])
 def command():
 	error=None
@@ -55,7 +62,7 @@ def command():
 		print message
 		#print 'Enviado'
 		t = threading.Thread(target=f.send, args=(message,ser,))
-    		t.start()
+		t.start()
 		#ser.write(message)
 	return render_template('command.html', error=error)	
 
@@ -87,5 +94,7 @@ def logout():
   
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0',port=4000)
+	print "////////////// Starting Cupula Ciclope's server//////////////"
+	#initServer()
+	app.run(host='0.0.0.0',port=5000)
 	    
