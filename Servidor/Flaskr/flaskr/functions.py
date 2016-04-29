@@ -5,9 +5,25 @@ import threading
 import subprocess
 
 def send(message,ser):
+	response=""
+	if message != 'G' and message != 'V':
+		response = "&#"
+	if message == 'G':
+		response=="&G"
 	if servidorConf.board==1:
 		message='&'+message+'#'
 		ser.write(message)
+		t2 = threading.Timer(0.5, alarma)
+	        t2.daemon=True
+	        t2.start()
+	        sArduino =str(ser.readline())
+	        sArduino = sArduino[0:-2]
+	        if response in sArduino:
+	                with open('log.txt', 'a') as file_:
+	                        file_.write(message+" "+sArduino+" "+time.strftime("%H:%M:%S") + "\n")
+	                        file_.close()
+	
+	                t2.cancel()
 
 
 def cameraServer():
@@ -18,7 +34,7 @@ def cameraServer():
 	#os.system('./mjpg_streamer -i "./input_uvc.so -r 320x240 -y" -o "./output_http.so -w ./www"')
 
 def checkRoutine(ser):
-	test(ser)
+	send('G',ser)
 	t = threading.Timer(5.0, checkRoutine, [ser])
 	t.daemon = True
 	t.start()
