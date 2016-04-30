@@ -28,6 +28,7 @@ app.config['DEBUG'] = False
 app.config['SECRET_KEY'] = 'some_really_long_random_string_here'
 logged= None
 
+f.empaquetar()
 #def initServer():
 #Launching Camera server if sc.camera variable is active
 if sc.camera==1:
