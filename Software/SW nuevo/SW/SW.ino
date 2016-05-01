@@ -44,7 +44,7 @@ void loop() {
             }
         }
      checkStr(str);   
-     Serial.println("OK"); 
+
     }
  inString = "";
  str = "";

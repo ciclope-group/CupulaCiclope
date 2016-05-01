@@ -27,7 +27,7 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 app.config['DEBUG'] = False
 app.config['SECRET_KEY'] = 'some_really_long_random_string_here'
 logged= None
-
+os.chdir('/home/pablo/TFG/CupulaCiclope/Servidor/Flaskr/flaskr')
 f.empaquetar()
 #def initServer():
 #Launching Camera server if sc.camera variable is active
