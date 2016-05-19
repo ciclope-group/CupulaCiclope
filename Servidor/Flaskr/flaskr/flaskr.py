@@ -27,26 +27,31 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 app.config['DEBUG'] = False
 app.config['SECRET_KEY'] = 'some_really_long_random_string_here'
 logged= None
-os.chdir('/home/trex/TFG/CupulaCiclope/Servidor/Flaskr/flaskr')
+os.chdir('/home/cupula/CupulaCiclope/Servidor/Flaskr/flaskr')
 f.empaquetar()
 #def initServer():
 #Launching Camera server if sc.camera variable is active
 if sc.camera==1:
-	newPid2=os.fork()	
-	if newPid2==0:
-		print "Launched camera server"
-		f.cameraServer()
-		sys.exit()
-	else:
-		print newPid2
+	try:
+		newPid2=os.fork()	
+		if newPid2==0:
+			print "Launched camera server"
+			f.cameraServer()
+			sys.exit()
+		else:
+			print newPid2
+	except:
+		print "Error launching the camera"
 #Launching Comunication with board if sc.boardPort is active                
 if sc.board==1:
-	ser = serial.Serial(sc.boardPort, 9600,timeout=3)
-	t=threading.Timer(2,f.checkRoutine,args=(ser,))
-	t.daemon=True
-	t.start()
-	print "Launched comunication with board"
-	
+	try:
+		ser = serial.Serial(sc.boardPort, 9600,timeout=3)
+		t=threading.Timer(2,f.checkRoutine,args=(ser,))
+		t.daemon=True
+		#t.start()
+		print "Launched comunication with board"
+	except:
+		print "Error launching the board"
 else:	
 	print 'Controller board variable is not activated'
 
@@ -66,7 +71,9 @@ def command():
 		t.start()
 		#ser.write(message)
 	return render_template('command.html', error=error)	
-
+def stuff():	
+	return jsonify(tick='155')
+	
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	error = None
@@ -92,6 +99,11 @@ def logout():
 	#session.pop('logged_in', None)
 	flash('You were logged out')
 	return redirect(url_for('show_entries'))
+@app.route('/ticks')
+def ticks():
+        t="Ticks: " + str(sc.ticks)
+        return t
+
   
 
 if __name__ == '__main__':

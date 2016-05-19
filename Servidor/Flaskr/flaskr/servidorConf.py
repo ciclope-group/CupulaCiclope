@@ -1,5 +1,7 @@
 camera=1
 board=1
-boardPort='/dev/ttyACM0'
-logDir="Log/log.txt"
-mjpgDir= "/home/trex/TFG/CupulaCiclope/Servidor/mjpg/mjpg-streamer/"
+boardPort='/dev/ttyUSB0'
+logDir="log.txt"
+mjpgDir= "/home/cupula/CupulaCiclope/Servidor/mjpg/mjpg-streamer/"
+ticks=0
+acimut=0

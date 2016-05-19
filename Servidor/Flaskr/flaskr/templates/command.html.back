@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
- 	<h2>Command</h2>
+  <h2>Command</h2>
   {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
   <form action="{{ url_for('command') }}" method=post>
     <dl>
@@ -8,11 +8,4 @@
       <dd><input type=text name=command>
     </dl>
   </form>
-<form action="{{ url_for('command') }}" method=get>
-    <dl>
-      <dt>ticks:
-      <dd><input type=text name=tick>
-    </dl>
-  </form>
-
 {% endblock %}
