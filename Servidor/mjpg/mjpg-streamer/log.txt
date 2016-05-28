@@ -124,3 +124,41 @@ Alarma 20:52:00
 Alarma 20:54:52
 Alarma 20:57:09
 Alarma 21:12:39
+&G# Response: &G”‰Ùã€€€†¸€€€€ # Azimut: 158947 Voltage: 12 at 16:28:46 24/05/2016
+&G# Response: &G”‰Ùã€€€†¶€€€€ # Azimut: 158947 Voltage: 12 at 16:28:48 24/05/2016
+&G# Response: &G”„ì€€€†·€€€€ # Azimut: 149 Voltage: 12 at 16:48:49 24/05/2016
+&G# Response: &G”ÍÜ€€€†·€€€€ # Azimut: 49 Voltage: 12 at 18:19:22 25/05/2016
+&G# Response: &G”ÍÜ€€€†¸€€€€ # Azimut: 49 Voltage: 12 at 18:19:24 25/05/2016
+&G# Response: &G”ÍÜ€€€†·€€€€ # Azimut: 49 Voltage: 12 at 18:19:26 25/05/2016
+&G# Response: &G”‹Î¨€€€†·€€€€ # Azimut: 358 Voltage: 12 at 08:07:04 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:06 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:08 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:10 28/05/2016
+&G# Response: &G”‹Î¨€€€†·€€€€ # Azimut: 358 Voltage: 12 at 08:07:12 28/05/2016
+&G# Response: &G”‹Î¨€€€†·€€€€ # Azimut: 358 Voltage: 12 at 08:07:14 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:16 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:18 28/05/2016
+&G# Response: &G”‹Î¨€€€†·€€€€ # Azimut: 358 Voltage: 12 at 08:07:20 28/05/2016
+&G# Response: &G”‹Î¨€€€†·€€€€ # Azimut: 358 Voltage: 12 at 08:07:22 28/05/2016
+&G# Response: &G”‹Î¨€€€†·€€€€ # Azimut: 358 Voltage: 12 at 08:07:24 28/05/2016
+&G# Response: &G”‹Î¨€€€†·€€€€ # Azimut: 358 Voltage: 12 at 08:07:26 28/05/2016
+&G# Response: &G”‹Î¨€€€†·€€€€ # Azimut: 358 Voltage: 12 at 08:07:28 28/05/2016
+&G# Response: &G”‹Î¨€€€†·€€€€ # Azimut: 358 Voltage: 12 at 08:07:30 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:32 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:34 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:36 28/05/2016
+&G# Response: &G”‹Î¨€€€†·€€€€ # Azimut: 358 Voltage: 12 at 08:07:38 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:40 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:42 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:44 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:46 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:48 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:50 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:52 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:54 28/05/2016
+&G# Response: &G”‹Î¨€€€†·€€€€ # Azimut: 358 Voltage: 12 at 08:07:56 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:07:58 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:08:00 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:08:02 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:08:04 28/05/2016
+&G# Response: &G”‹Î¨€€€†¶€€€€ # Azimut: 358 Voltage: 12 at 08:08:06 28/05/2016

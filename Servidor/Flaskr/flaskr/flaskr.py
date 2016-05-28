@@ -48,7 +48,7 @@ if sc.board==1:
 		ser = serial.Serial(sc.boardPort, 9600,timeout=3)
 		t=threading.Timer(2,f.checkRoutine,args=(ser,))
 		t.daemon=True
-		#t.start()
+		t.start()
 		print "Launched comunication with board"
 	except:
 		print "Error launching the board"
@@ -91,7 +91,10 @@ def login():
 			return redirect(url_for('command'))
 	return render_template('login.html', error=error)
 
-
+@app.route('/azimut', methods=['GET'])
+def azimut():
+	import servidorConf as sc
+	return str(sc.acimut)
 @app.route('/logout')
 def logout():
 	global logged 

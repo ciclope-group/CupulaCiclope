@@ -5,19 +5,20 @@ import threading
 import subprocess
 import shutil
 import struct
+from messageObject import messageObject
 mutex = threading.Lock()
 
 def empaquetar():
 	tamLog = os.path.getsize(sc.logDir)
 	print "Tamanio log "+ str(tamLog)
 	if tamLog > 1000000:
-		os.system('tar czvf Log/log.tar.gz '+sc.logDir)
+		os.system('tar czvf log.tar.gz '+sc.logDir)
 		print "Empaquetado"
 		os.system('rm '+ sc.logDir)
 		 
 def send(message,ser):
 	response=""
-	if message != 'G' and message != 'V':
+	"""if message != 'G' and message != 'V':
 		response = "&#"
 	if message == 'G':
 		response=="&G"
@@ -45,11 +46,16 @@ def send(message,ser):
                 message[4]=hex(ord(message[4])+48)[2:]
 		message[5]=hex(ord(message[4])+48)[2:]'''
 
-		print message
+		print message"""
 		
 	if sc.board==1:
 		mutex.acquire()
-		message='&'+message+'#'
+		x=messageObject(ser,message)
+		x.send()
+		mutex.release() 
+		x.logMessage()
+		del x
+		"""message='&'+message+'#'
 		ser.write(message)
 		print message
 		t2 = threading.Timer(4, alarma)
@@ -112,11 +118,11 @@ def send(message,ser):
 		
 	        if response in sArduino:
 	                t2.cancel()
-			"""with open(sc.logDir, 'a') as file_:
+			with open(sc.logDir, 'a') as file_:
 	                        file_.write(message+" "+sArduino+" "+time.strftime("%H:%M:%S")+" "+ time.strftime("%d/%m/%Y") + "\n")
-	                        file_.close()"""
+	                        file_.close()
 	
-	                
+	 	"""               
 
 
 def cameraServer():

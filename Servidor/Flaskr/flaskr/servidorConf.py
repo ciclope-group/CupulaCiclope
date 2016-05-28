@@ -1,3 +1,4 @@
+totalticks=190967
 camera=1
 board=1
 boardPort='/dev/ttyUSB0'
