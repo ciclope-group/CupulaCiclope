@@ -9,11 +9,9 @@ from contextlib import closing
 import serial
 import subprocess
 import os,sys
-import functions as f
+from functions import system
 
-
-		
-
+sy=system()
 # configuration
 DATABASE = '/tmp/flaskr.db'
 DEBUG = False
@@ -28,31 +26,31 @@ app.config['DEBUG'] = False
 app.config['SECRET_KEY'] = 'some_really_long_random_string_here'
 logged= None
 os.chdir('/home/cupula/CupulaCiclope/Servidor/Flaskr/flaskr')
-f.empaquetar()
+sy.empaquetar()
 #def initServer():
 #Launching Camera server if sc.camera variable is active
 if sc.camera==1:
 	try:
-		newPid2=os.fork()	
+		newPid2=os.fork()
 		if newPid2==0:
 			print "Launched camera server"
-			f.cameraServer()
+			sy.cameraServer()
 			sys.exit()
 		else:
 			print newPid2
 	except:
 		print "Error launching the camera"
-#Launching Comunication with board if sc.boardPort is active                
+#Launching Comunication with board if sc.boardPort is active
 if sc.board==1:
 	try:
 		ser = serial.Serial(sc.boardPort, 9600,timeout=3)
-		t=threading.Timer(2,f.checkRoutine,args=(ser,))
+		t=threading.Timer(2,sy.checkRoutine,args=(ser,))
 		t.daemon=True
 		t.start()
 		print "Launched comunication with board"
 	except:
 		print "Error launching the board"
-else:	
+else:
 	print 'Controller board variable is not activated'
 
 
@@ -67,13 +65,13 @@ def command():
 		message=request.form['command']
 		print message
 		#print 'Enviado'
-		t = threading.Thread(target=f.send, args=(message,ser,))
+		t = threading.Thread(target=sy.send, args=(message,ser,))
 		t.start()
 		#ser.write(message)
-	return render_template('command.html', error=error)	
-def stuff():	
+	return render_template('command.html', error=error)
+def stuff():
 	return jsonify(tick='155')
-	
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	error = None
@@ -97,7 +95,7 @@ def azimut():
 	return str(sc.acimut)
 @app.route('/logout')
 def logout():
-	global logged 
+	global logged
 	logged = None
 	#session.pop('logged_in', None)
 	flash('You were logged out')
@@ -107,10 +105,9 @@ def ticks():
         t="Ticks: " + str(sc.ticks)
         return t
 
-  
+
 
 if __name__ == '__main__':
 	print "////////////// Starting Cupula Ciclope's server//////////////"
 	#initServer()
 	app.run(host='0.0.0.0',port=5000)
-	    
