@@ -3,6 +3,7 @@
 # all the imports
 import servidorConf as sc
 import threading
+import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, \
 	 abort, render_template, flash, Response
 from contextlib import closing
@@ -10,10 +11,14 @@ import serial
 import subprocess
 import os,sys
 from functions import system
+import json
+import time
+from tinydb import TinyDB, where,Query
+
+task_json=""
 
 sy=system()
 # configuration
-DATABASE = '/tmp/flaskr.db'
 DEBUG = False
 SECRET_KEY = 'development key'
 USERNAME = 'admin'
@@ -24,6 +29,14 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 #Debug var
 app.config['DEBUG'] = False
 app.config['SECRET_KEY'] = 'some_really_long_random_string_here'
+
+
+db=TinyDB('/home/cupula/CupulaCiclope/Servidor/Flaskr/flaskr/database.json')
+table=db.table('history')
+
+task_id=len(table)+1
+
+
 logged= None
 os.chdir('/home/cupula/CupulaCiclope/Servidor/Flaskr/flaskr')
 sy.empaquetar()
@@ -55,27 +68,52 @@ else:
 
 
 
-@app.route('/command', methods=['GET','POST'])
-def command():
+@app.route('/api/cupula/montegancedo/task', methods=['POST'])
+def task():
 	error=None
-	global logged
+	"""global logged
 	if not logged:
-		abort(401)
+		abort(401)"""
 	if request.method == 'POST':
-		message=request.form['command']
+		#cur = get_db().cursor()
+		message=request.get_json()
 		print message
-		#print 'Enviado'
-		if 'D' in message:
+		print message['command']
+		print time.strftime("%H:%M:%S")
+		global task_id
+		task_id=task_id+1
+		print task_id
+		table.all()
+		global task_json
+		table.insert({'id':task_id,'command':message,'time':time.strftime("%H:%M:%S")})
+		
+		task_json=json.dumps({'id':task_id,'command':message['command'],'time':time.strftime("%H:%M:%S")})
+		print task_json
+		"""if 'D' in message:
 			t = threading.Thread(target=sy.goto, args=(message,ser,))
                         t.start()
 		else:
 			t = threading.Thread(target=sy.send, args=(message,ser,))
-			t.start()
+			t.start()"""
 		#ser.write(message)
-	return render_template('command.html', error=error)
+		return task_json
+@app.route('/api/cupula/montegancedo/', methods=['GET'])
+def status():
+	response_json=json.dumps({'lat':"40 24 22 N"  ,'long':"3 50 19 O" , 'name':"Observatorio Montegancedo",'status':{'Azimut':sy.azimut,'Laps':sy.vueltas, 'Voltage': sy.voltage, 'Direction':sy.direction}})
+	return response_json	
+		
+@app.route('/api/cupula/montegancedo/tasks/<int:iden>', methods=['GET'])
+def returnTask(iden):
+	s=Query()
+	print "Query si"
+	x=table.get(s.id==iden)
+	print "Busqueda:"
+	print x['id']
+	task_json=json.dumps({'id':x['id'],'command':x['command']['command'],'time':x['time']})
+	return task_json
 
 @app.route('/status', methods=['GET'])
-def status():
+def status2():
 	print "OK-NODE"
         return jsonify(tick='155')
 @app.route('/rderecha', methods=['GET'])

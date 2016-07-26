@@ -55,8 +55,8 @@ else:
 
 
 
-@app.route('/command', methods=['GET','POST'])
-def command():
+@app.route('/api/cupula/task, methods=['POST'])
+def task():
 	error=None
 	global logged
 	if not logged:
