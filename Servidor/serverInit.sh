@@ -1,2 +1,2 @@
 #! /bin/bash
-sudo Flaskr/flaskr/flaskr.py
+sudo Flaskr/flaskr/flaskr2.py

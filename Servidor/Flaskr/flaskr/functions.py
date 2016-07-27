@@ -6,9 +6,10 @@ import subprocess
 import shutil
 import struct
 from messageObject import messageObject
-
-
+from tinydb import TinyDB, where,Query
+import json
 class system:
+	task_json=""
 	mutex = threading.Lock()
 	direction=""
 	azimut=0
@@ -17,6 +18,9 @@ class system:
 	vueltas=-3
 	objective=None
 	nextObjective=None
+	db=TinyDB('/home/cupula/CupulaCiclope/Servidor/Flaskr/flaskr/database.json')
+	table=db.table('history')
+
 
 	def empaquetar(self):
 		tamLog = os.path.getsize(sc.logDir)
@@ -31,6 +35,7 @@ class system:
 	                if ((s-self.azimut)<180)or ((s-self.azimut)<-180):
 				if self.vueltas<=1:
 					self.send(message,ser)
+					self.objective=s
 				else:
 					self.objective=(self.azimut+181)
 					self.nextObjective=s
@@ -39,6 +44,7 @@ class system:
 			if ((s-self.azimut)>180)or (((s-self.azimut)>-180)and (s-self.azimut)< 0):
                                 if self.vueltas>=-1:
                                         self.send(message,ser)
+					self.objective=s
                                 else:
                                         self.objective=(170-(360-self.azimut))
                                         self.nextObjective=s
@@ -75,11 +81,22 @@ class system:
 			self.vueltas=self.vueltas-2
 		if (int(self.azimut)>330 and (int(x.azimut)>=0 and int(x.azimut)<20) ):
 			self.vueltas=self.vueltas+2
+		print "Objetive: "+str(self.objective)+ "nextObjetive: "+str(self.nextObjective)
+		if self.objective!=None and self.objective!=x.azimut:		
+                	if ((self.objective-x.azimut)<=2)and((self.objective-x.azimut)>=-2):
+				print "Completo 1"
+        	                component=Query()
+				data=json.loads(self.task_json)
+				print data
+	                        self.table.update({'status':'completed'},component.id==int(data['id']))
+				print "Cimpleto2"
+				self.Objective=None
 		if self.nextObjective!=None:
 			if ((self.objective-x.azimut)<=2)and((self.objective-x.azimut)>=-2):
 				self.send('D'+str(self.nextObjective),ser)
 				self.objective=None
 				self.nextObjective=None
+									
 		print "Vueltas: "+ str(self.vueltas)		
 		self.azimut=x.azimut
 		print "Direccion: " + str(self.direction)
