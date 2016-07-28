@@ -15,7 +15,7 @@ class system:
 	azimut=0
 	direction=""
 	voltage=""
-	vueltas=-3
+	vueltas=1
 	objective=None
 	nextObjective=None
 	db=TinyDB('/home/cupula/CupulaCiclope/Servidor/Flaskr/flaskr/database.json')
@@ -30,8 +30,9 @@ class system:
 			print "Empaquetado"
 			os.system('rm '+ sc.logDir)
 	def goto(self,message,ser):
-		if 'D' == message[0]:
-	                s=int(message[1:])
+		print "Llego2"
+		if 'D' == str(message[0]):
+	               	''' s=int(message[1:])
 	                if ((s-self.azimut)<180)or ((s-self.azimut)<-180):
 				if self.vueltas<=1:
 					self.send(message,ser)
@@ -49,7 +50,39 @@ class system:
                                         self.objective=(170-(360-self.azimut))
                                         self.nextObjective=s
                                         print "Objetive: "+str(self.objective)+ "nextObjetive: "+str(self.nextObjective)
-                                        self.send('D'+str(self.objective),ser)
+                                        self.send('D'+str(self.objective),ser)'''
+			   
+			print "sigo viendo otra D"		
+			s=int(message[1:])
+			print str(s)
+			if s<5 or s>355:
+				print "S:" +str(s)
+				s=5
+				message='D5'
+			if (s>=5 and s<=355):
+				if (s>self.azimut):
+					if (self.azimut-s<=-179):
+						print "Mando al otro lado 1"	
+						self.objective=(self.azimut+179)
+                                        	self.nextObjective=s
+                                        	print "Objetive: "+str(self.objective)+ "nextObjetive: "+str(self.nextObjective)
+                                        	self.send('D'+str(self.objective),ser)
+					else:	
+						print "No hago caso 1"
+						self.objective=s
+						self.send(message,ser)
+                		if (s<self.azimut):
+                                        if (self.azimut-s>=179):
+						print "Mando al otro lado 2"
+                                                self.objective=(self.azimut-170)
+                                                self.nextObjective=s
+                                                print "Objetive: "+str(self.objective)+ "nextObjetive: "+str(self.nextObjective)
+                                                self.send('D'+str(self.objective),ser)
+                                        else:
+						print "No hago caso 2"
+                                                self.send(message,ser)
+                                                self.objective=s
+				                   
 
 	def send(self,message,ser):
 		if sc.board==1:
@@ -77,24 +110,25 @@ class system:
 			self.direction = -1
 		elif (int(x.azimut)-int(self.azimut))== 0 :
 			self.direction = 0
-		if ((int(self.azimut)>=0 and  (int(self.azimut)<20) and int(x.azimut)>330)):
+		'''if ((int(self.azimut)>=0 and  (int(self.azimut)<20) and int(x.azimut)>330)):
 			self.vueltas=self.vueltas-2
 		if (int(self.azimut)>330 and (int(x.azimut)>=0 and int(x.azimut)<20) ):
-			self.vueltas=self.vueltas+2
+			self.vueltas=self.vueltas+2'''
 		print "Objetive: "+str(self.objective)+ "nextObjetive: "+str(self.nextObjective)
-		if self.objective!=None and self.objective!=x.azimut:		
-                	if ((self.objective-x.azimut)<=2)and((self.objective-x.azimut)>=-2):
-				print "Completo 1"
-        	                component=Query()
-				data=json.loads(self.task_json)
-				print data
-	                        self.table.update({'status':'completed'},component.id==int(data['id']))
-				print "Cimpleto2"
-				self.Objective=None
+		if self.nextObjective==None:	
+			if self.objective!=None and self.objective!=x.azimut:		
+                		if ((self.objective-x.azimut)<=2)and((self.objective-x.azimut)>=-2):
+					print "Completo 1"
+        	                	component=Query()
+					data=json.loads(self.task_json)
+					print data
+	                        	self.table.update({'status':'completed'},component.id==int(data['id']))
+					print "Cimpleto2"
+					self.Objective=None
 		if self.nextObjective!=None:
 			if ((self.objective-x.azimut)<=2)and((self.objective-x.azimut)>=-2):
 				self.send('D'+str(self.nextObjective),ser)
-				self.objective=None
+				self.objective=self.nextObjective
 				self.nextObjective=None
 									
 		print "Vueltas: "+ str(self.vueltas)		
@@ -102,8 +136,12 @@ class system:
 		print "Direccion: " + str(self.direction)
 	def checkRoutine(self,ser):
 		self.send('G',ser)
+		with open('/home/cupula/CupulaCiclope/Servidor/logG', 'a') as file_:
+                	file_.write("Refrescado estatus a las"+" "+time.strftime("%H:%M:%S") + "\n")
+                        file_.close()
+
 		t = threading.Timer(1.0, self.checkRoutine, [ser])
-		t.daemon = True
+		t.daemon = False
 		t.start()
 
 

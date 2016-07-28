@@ -1,0 +1,1245 @@
+Tamanio log 775575
+23870
+Launched comunication with board
+////////////// Starting Cupula Ciclope's server//////////////
+&G#
+&G”‚ËÙ€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42457
+Acimut: 80
+Objetive: NonenextObjetive: None
+Vueltas: 1
+Direccion: 1
+&G#
+&G”‚ËÙ€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42457
+Acimut: 80
+Objetive: NonenextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚ËÙ€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42457
+Acimut: 80
+Objetive: NonenextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚ËÙ€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42457
+Acimut: 80
+Objetive: NonenextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚ËÙ€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42457
+Acimut: 80
+Objetive: NonenextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚ËÙ€€€†¼€€€€ #
+A: 10000110
+B: 10111100
+Tension: 12
+ticks: 42457
+Acimut: 80
+Objetive: NonenextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚ËÙ€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42457
+Acimut: 80
+Objetive: NonenextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚ËÙ€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42457
+Acimut: 80
+Objetive: NonenextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚ËÙ€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42457
+Acimut: 80
+Objetive: NonenextObjetive: None
+Vueltas: 1
+Direccion: 0
+{"status": "non-completed", "command": "D90", "id": 216, "time": "06:06:38"}
+D90
+Hay una D
+Llego2
+sigo viendo otra D
+90
+No hago caso 1
+47741
+Z0;:7=
+&Z0;:7=#
+&#
+&G#
+&G´‚Ëı€€€†¶€€€€ #
+A: 10000110
+B: 10110110
+Tension: 12
+ticks: 42493
+Acimut: 80
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G´‚×ü€€€†¹€€€€ #
+A: 10000110
+B: 10111001
+Tension: 12
+ticks: 44028
+Acimut: 82
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 1
+&G#
+&G´‚äÜ€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 45660
+Acimut: 86
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 1
+&G#
+&G´‚î¼€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 46908
+Acimut: 88
+Objetive: 90nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D90', u'id': 216, u'time': u'06:06:38'}
+Cimpleto2
+Vueltas: 1
+Direccion: 1
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 1
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†¼€€€€ #
+A: 10000110
+B: 10111100
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚õ’€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 47762
+Acimut: 90
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&G#
+{"status": "non-completed", "command": "D80", "id": 217, "time": "06:08:03"}
+D80
+Hay una D
+Llego2
+sigo viendo otra D
+80
+No hago caso 2
+&G”‚õ’€€€†¼€€€€ #
+A: 10000110
+B: 10111100
+Tension: 12
+ticks: 47762
+Acimut: 90
+42437
+Z0:5<5
+&Z0:5<5#
+Objetive: 90nextObjetive: None
+Vueltas: 1
+Direccion: 0
+&#
+&G#
+&G´‚ôğ€€€†¶€€€€ #
+A: 10000110
+B: 10110110
+Tension: 12
+ticks: 47728
+Acimut: 89
+Objetive: 80nextObjetive: None
+Vueltas: 1
+Direccion: -1
+&G#
+&G´‚èí€€€†¹€€€€ #
+A: 10000110
+B: 10111001
+Tension: 12
+ticks: 46189
+Acimut: 87
+Objetive: 80nextObjetive: None
+Vueltas: 1
+Direccion: -1
+&G#
+&G´‚Ü„€€€†¹€€€€ #
+A: 10000110
+B: 10111001
+Tension: 12
+ticks: 44548
+Acimut: 83
+Objetive: 80nextObjetive: None
+Vueltas: 1
+Direccion: -1
+&G#
+&G´‚Ò€€€†¸€€€€ #
+A: 10000110
+B: 10111000
+Tension: 12
+ticks: 43294
+Acimut: 81
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: -1
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: -1
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'Tamanio log 775575
+Launched camera server
+('Video streaming starting on pid ', 23870)
+Error launching the camera
+Launched comunication with board
+////////////// Starting Cupula Ciclope's server//////////////
+}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†¼€€€€ #
+A: 10000110
+B: 10111100
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†¼€€€€ #
+A: 10000110
+B: 10111100
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†º€€€€ #
+A: 10000110
+B: 10111010
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80', u'id': 217, u'time': u'06:08:03'}
+Cimpleto2
+Vueltas: 1
+Direccion: 0
+&G#
+&G”‚Ë±€€€†»€€€€ #
+A: 10000110
+B: 10111011
+Tension: 12
+ticks: 42417
+Acimut: 79
+Objetive: 80nextObjetive: None
+Completo 1
+{u'status': u'non-completed', u'command': u'D80

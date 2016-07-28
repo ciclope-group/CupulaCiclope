@@ -6,3 +6,4 @@ logDir="log.txt"
 mjpgDir= "/home/cupula/CupulaCiclope/Servidor/mjpg/mjpg-streamer/"
 ticks=0
 acimut=0
+home=180

@@ -77,23 +77,23 @@ def task():
 	if request.method == 'POST':
 		#cur = get_db().cursor()
 		message=request.get_json()
-		print message
-		print message['command']
-		print time.strftime("%H:%M:%S")
 		global task_id
 		task_id=task_id+1
-		print task_id
 		sy.table.all()
 
 		sy.table.insert({'id':task_id,'command':message,'time':time.strftime("%H:%M:%S"),'status':'non-completed'})
 		
 		sy.task_json=json.dumps({'id':task_id,'command':message['command'],'time':time.strftime("%H:%M:%S"), 'status':"non-completed"})
 		print sy.task_json
-		message=message['command']
+		message=str(message['command'])
 		print message
+		if 'H' in message:
+			message='D'+str(sc.home)
 		if 'D' in message:
+			print "Hay una D"
 			t = threading.Thread(target=sy.goto, args=(message,ser,))
                         t.start()
+			
 		else:
 			try:
 				t = threading.Thread(target=sy.send, args=(message,ser,))
