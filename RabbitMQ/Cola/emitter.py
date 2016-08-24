@@ -1,23 +1,29 @@
 #!/usr/bin/env python
 import pika
 import sys
+#Importamos el archivo de configuracion
 import config as c
-import pika
-import socket
-
-credentials = pika.PlainCredentials('cupula', '1234')
-connection = pika.BlockingConnection(pika.ConnectionParameters(
-        c.dictIP['servidorIP'],
-        5672,
-        'Cupula',
-        credentials))
+#Establecemos las credenciales
+credentials = pika.PlainCredentials('cupula', 'informaticaciclope')
+#Establecemos la conexion al servidor a traves del puerto 5672
+connection = pika.BlockingConnection(pika.ConnectionParameters(c.urlServer, 5672,'/',credentials))
 channel = connection.channel()
-
-channel.queue_declare(queue=("servidor_queue"),durable=True)
-message =" ".join(sys.argv[1:])
-if (message.find("-newNode")!=-1):
-    message= c.myIP +" "+ message
-    print message
-channel.basic_publish(exchange='',routing_key=("servidor_queue"),body=c.me+" "+ message)
-print " [x] Sent "+ message
+#Declaramos La cola por la que recibiremos (Por si acaso no esta creada aun)
+channel.queue_declare(queue=c.me, durable=True)
+#Declaramos el exchange de tipo direct
+channel.exchange_declare(exchange=c.me,
+                         type='direct')
+#Si no se ha especificado la severidad, se establece por defecto "info"
+if len(sys.argv) > 2:
+	severity = sys.argv[1]
+	message = ''.join(sys.argv[2:])
+else:
+	severity = "info"
+        message = ''.join(sys.argv[1:])
+#Publicamos en el exchange
+channel.basic_publish(exchange=c.me,
+                      routing_key=severity,
+                      body=message)
+print(" [x] Sent %r " % (message))
+print("Severity: " + severity)
 connection.close()
