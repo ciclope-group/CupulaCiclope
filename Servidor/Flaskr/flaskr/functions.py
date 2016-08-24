@@ -9,6 +9,8 @@ from messageObject import messageObject
 from tinydb import TinyDB, where,Query
 import json
 class system:
+        _threadStopper_=""
+        _thread_=""
 	task_json=""
 	mutex = threading.Lock()
 	direction=""
@@ -18,6 +20,7 @@ class system:
 	vueltas=1
 	objective=None
 	nextObjective=None
+	on=False
 	db=TinyDB('/home/cupula/CupulaCiclope/Servidor/Flaskr/flaskr/database.json')
 	table=db.table('history')
 
@@ -55,10 +58,11 @@ class system:
 			print "sigo viendo otra D"		
 			s=int(message[1:])
 			print str(s)
-			if s<5 or s>355:
+                        if s<5 or s>355:
 				print "S:" +str(s)
 				s=5
 				message='D5'
+                                self.objective=s
 			if (s>=5 and s<=355):
 				if (s>self.azimut):
 					if (self.azimut-s<=-179):
@@ -70,30 +74,31 @@ class system:
 					else:	
 						print "No hago caso 1"
 						self.objective=s
-						self.send(message,ser)
+						self.send('D'+str(self.objective),ser)
                 		if (s<self.azimut):
-                                        if (self.azimut-s>=179):
+                                        if ((self.azimut-s)>=179):
 						print "Mando al otro lado 2"
                                                 self.objective=(self.azimut-170)
                                                 self.nextObjective=s
                                                 print "Objetive: "+str(self.objective)+ "nextObjetive: "+str(self.nextObjective)
                                                 self.send('D'+str(self.objective),ser)
                                         else:
-						print "No hago caso 2"
-                                                self.send(message,ser)
-                                                self.objective=s
+                                                self.send('D'+str(self.objective),ser)
+                                                print "No hago caso 2"
+                                                
 				                   
 
 	def send(self,message,ser):
 		if sc.board==1:
-			self.mutex.acquire()
-			x=messageObject(ser,message)
-			x.send()
-			self.mutex.release()
-			if message == 'G':
-				self.refreshStatus(x,ser)
-			x.logMessage()
-			del x
+                        if self.on==True:
+                                self.mutex.acquire()
+                                x=messageObject(ser,message)
+                                x.send()
+                                self.mutex.release()
+                                if message == 'G':
+                                        self.refreshStatus(x,ser)
+                                x.logMessage()
+                                del x
 
 
 	def cameraServer(self):
@@ -122,8 +127,10 @@ class system:
         	                	component=Query()
 					data=json.loads(self.task_json)
 					print data
-	                        	self.table.update({'status':'completed'},component.id==int(data['id']))
-					print "Cimpleto2"
+					try:
+	                        		self.table.update({'status':'completed'},component.id==int(data['id']))
+					except:
+						print "Cant update table"
 					self.Objective=None
 		if self.nextObjective!=None:
 			if ((self.objective-x.azimut)<=2)and((self.objective-x.azimut)>=-2):
@@ -135,14 +142,15 @@ class system:
 		self.azimut=x.azimut
 		print "Direccion: " + str(self.direction)
 	def checkRoutine(self,ser):
+            while (not self._threadStopper_.isSet()):
 		self.send('G',ser)
 		with open('/home/cupula/CupulaCiclope/Servidor/logG', 'a') as file_:
                 	file_.write("Refrescado estatus a las"+" "+time.strftime("%H:%M:%S") + "\n")
                         file_.close()
-
-		t = threading.Timer(1.0, self.checkRoutine, [ser])
-		t.daemon = False
-		t.start()
+                time.sleep(1)
+		'''t = threading.Timer(1.0, self.checkRoutine, [ser])
+		t.daemon = True
+		t.start()'''
 
 
 

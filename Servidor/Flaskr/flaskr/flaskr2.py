@@ -30,10 +30,6 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 app.config['DEBUG'] = False
 app.config['SECRET_KEY'] = 'some_really_long_random_string_here'
 
-
-#db=TinyDB('/home/cupula/CupulaCiclope/Servidor/Flaskr/flaskr/database.json')
-#table=db.table('history')
-
 task_id=len(sy.table)+1
 
 
@@ -57,9 +53,10 @@ if sc.camera==1:
 if sc.board==1:
 	try:
 		ser = serial.Serial(sc.boardPort, 9600,timeout=3)
-		t=threading.Timer(2,sy.checkRoutine,args=(ser,))
+		'''t=threading.Timer(2,sy.checkRoutine,args=(ser,))
 		t.daemon=True
-		t.start()
+		t.start()'''
+		#sy.checkRoutine(ser)
 		print "Launched comunication with board"
 	except:
 		print "Error launching the board"
@@ -84,15 +81,28 @@ def task():
 		sy.table.insert({'id':task_id,'command':message,'time':time.strftime("%H:%M:%S"),'status':'non-completed'})
 		
 		sy.task_json=json.dumps({'id':task_id,'command':message['command'],'time':time.strftime("%H:%M:%S"), 'status':"non-completed"})
-		print sy.task_json
+		#print sy.task_json
 		message=str(message['command'])
-		print message
+		#print message
 		if 'H' in message:
 			message='D'+str(sc.home)
+			return
 		if 'D' in message:
-			print "Hay una D"
+			#print "Hay una D"
 			t = threading.Thread(target=sy.goto, args=(message,ser,))
                         t.start()
+                        return
+		if 'ON' in message:
+                        sy._threadStopper_=threading.Event()
+                        sy._thread_=threading.Timer(2,sy.checkRoutine,args=(ser,))
+                        sy._thread_.daemon=True
+			sy.on=True
+			sy._thread_.start()
+			return
+		if 'OFF' in message:
+			sy.on=False
+			sy._threadStopper_.set()
+			return
 			
 		else:
 			try:
@@ -110,12 +120,10 @@ def status():
 @app.route('/api/cupula/montegancedo/tasks/<int:iden>', methods=['GET'])
 def returnTask(iden):
 	s=Query()
-	print "Query si"
 	x=sy.table.get(s.id==iden)
 	print x
 	if x==None:
 		abort(404)
-	print "Busqueda:"
 	print x['id']
 	sy.task_json=json.dumps({'id':x['id'],'command':x['command']['command'],'time':x['time'],'status':x['status']})
 	return sy.task_json
@@ -124,20 +132,7 @@ def returnTask(iden):
 def status2():
 	print "OK-NODE"
         return jsonify(tick='155')
-@app.route('/rderecha', methods=['GET'])
-def rderecha():
-        error=None
-	global logged
-        if not logged:
-                abort(401)
-        if request.method == 'GET':
-                print message
-                #print 'Enviado'
-                t.start()
-                t = threading.Thread(target=sy.send, args=(ser,"R",))
-                t.start()
-                #ser.write(message)
-        return str("OK")
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

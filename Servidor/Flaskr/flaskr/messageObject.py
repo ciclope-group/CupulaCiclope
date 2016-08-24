@@ -38,7 +38,7 @@ class messageObject():
 	        if 'D' == self.message[0]:
 	                s=int(self.message[1:])
 	                s=190967*s/360
-	                print s
+	                #print s
 	                #message=message
 	                s=hex(s)
 	                s=str(s)
@@ -49,17 +49,9 @@ class messageObject():
 	                chrmap = {'A': '\x3a', 'B': '\x3b', 'C': '\x3c', 'D': '\x3d', 'E': '\x3e', 'F': '\x3f'}
 	                s=''.join(chrmap.get(c, c) for c in s)
 	                self.message='Z'+s
-
-	                '''message[1]=hex(ord(message[1])+48)[2:]
-	                message[2]=hex(ord(message[2])+48)[2:]
-	                message[3]=hex(ord(message[3])+48)[2:]
-	                message[4]=hex(ord(message[4])+48)[2:]
-	                message[5]=hex(ord(message[4])+48)[2:]'''
-
-	                print self.message
 		self.message='&'+self.message+'#'
             	self.ser.write(self.message)
-	        print self.message
+	        print "Mensaje enviado: "+ self.message
 	        t2 = threading.Timer(4, self.alarma)
         	t2.daemon=True
 	        t2.start()
@@ -69,15 +61,13 @@ class messageObject():
            	while self.ser.inWaiting() > 0:
                 	sArduino += self.ser.read(1)
             	sArduino=str(sArduino)
-            	print sArduino
+            	print "Respuesta recibida: "+sArduino
 		self.sArduino=sArduino
 		if self.response in sArduino:
 			t2.cancel()
             	if self.message == '&G#':
                 	var=bin(ord(sArduino[10] ))[2:].zfill(8)
-                	print "A: " + str(var)
                 	var=bin(ord(sArduino[11] ))[2:].zfill(8)
-	                print "B: " + str(var)
 	                a2=sArduino[10]
 	                a2=ord(a2)-int('80',16)
 	                a2=format(a2, '08b')
@@ -116,8 +106,7 @@ class messageObject():
 	                d=a+b+c
 	                d=int(d,2)
 			self.azimut=(d*360)/sc.totalticks
-
-                    	print "ticks: "+ str(d)
+                        #print "Ticks: "+ str(d)
                     	sc.acimut=(d*360)/sc.totalticks
 			print "Acimut: "+str(sc.acimut)
         	        sc.ticks=d
