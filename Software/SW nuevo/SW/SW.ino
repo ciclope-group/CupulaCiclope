@@ -1,10 +1,22 @@
 String inString = "";    // string to hold input
 String str="";
 void checkStr(String s){
-  if (s=="R") digitalWrite(13,HIGH);
-  if (s=="L") digitalWrite(13,HIGH);
-  if (s=="I") digitalWrite(13,LOW);
+  if (s=="R"){
+	Serial.println("&#");
+	 digitalWrite(13,HIGH);}
+  if (s=="L"){
+	Serial.println("&#");
+	digitalWrite(13,HIGH);
+	}
+  if (s=="I"){
+	Serial.println("&#");
+	digitalWrite(13,LOW);
+	}
+ if (s=="G"){ 
+        Serial.println("&GLSxxxyyybbtttll#");
+        }
 }
+
 void setup() {
   // Open serial communications and wait for port to open:
   Serial.begin(9600);
@@ -32,7 +44,7 @@ void loop() {
             }
         }
      checkStr(str);   
-     Serial.println("OK"); 
+
     }
  inString = "";
  str = "";

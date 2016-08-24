@@ -3,6 +3,7 @@
 # all the imports
 import servidorConf as sc
 import threading
+import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, \
 	 abort, render_template, flash, Response
 from contextlib import closing
@@ -10,10 +11,14 @@ import serial
 import subprocess
 import os,sys
 from functions import system
+import json
+import time
+from tinydb import TinyDB, where,Query
+
+
 
 sy=system()
 # configuration
-DATABASE = '/tmp/flaskr.db'
 DEBUG = False
 SECRET_KEY = 'development key'
 USERNAME = 'admin'
@@ -24,6 +29,10 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 #Debug var
 app.config['DEBUG'] = False
 app.config['SECRET_KEY'] = 'some_really_long_random_string_here'
+
+task_id=len(sy.table)+1
+
+
 logged= None
 os.chdir('/home/cupula/CupulaCiclope/Servidor/Flaskr/flaskr')
 sy.empaquetar()
@@ -44,9 +53,10 @@ if sc.camera==1:
 if sc.board==1:
 	try:
 		ser = serial.Serial(sc.boardPort, 9600,timeout=3)
-		t=threading.Timer(2,sy.checkRoutine,args=(ser,))
+		'''t=threading.Timer(2,sy.checkRoutine,args=(ser,))
 		t.daemon=True
-		t.start()
+		t.start()'''
+		#sy.checkRoutine(ser)
 		print "Launched comunication with board"
 	except:
 		print "Error launching the board"
@@ -55,43 +65,74 @@ else:
 
 
 
-@app.route('/command', methods=['GET','POST'])
-def command():
+@app.route('/api/cupula/montegancedo/task', methods=['POST'])
+def task():
 	error=None
-	global logged
+	"""global logged
 	if not logged:
-		abort(401)
+		abort(401)"""
 	if request.method == 'POST':
-		message=request.form['command']
-		print message
-		#print 'Enviado'
+		#cur = get_db().cursor()
+		message=request.get_json()
+		global task_id
+		task_id=task_id+1
+		sy.table.all()
+
+		sy.table.insert({'id':task_id,'command':message,'time':time.strftime("%H:%M:%S"),'status':'non-completed'})
+		
+		sy.task_json=json.dumps({'id':task_id,'command':message['command'],'time':time.strftime("%H:%M:%S"), 'status':"non-completed"})
+		#print sy.task_json
+		message=str(message['command'])
+		#print message
+		if 'H' in message:
+			message='D'+str(sc.home)
+			return
 		if 'D' in message:
+			#print "Hay una D"
 			t = threading.Thread(target=sy.goto, args=(message,ser,))
                         t.start()
+                        return
+		if 'ON' in message:
+                        sy._threadStopper_=threading.Event()
+                        sy._thread_=threading.Timer(2,sy.checkRoutine,args=(ser,))
+                        sy._thread_.daemon=True
+			sy.on=True
+			sy._thread_.start()
+			return
+		if 'OFF' in message:
+			sy.on=False
+			sy._threadStopper_.set()
+			return
+			
 		else:
-			t = threading.Thread(target=sy.send, args=(message,ser,))
-			t.start()
+			try:
+				t = threading.Thread(target=sy.send, args=(message,ser,))
+				t.start()
+			except:
+				print "no lanza proceso"
 		#ser.write(message)
-	return render_template('command.html', error=error)
+		return sy.task_json
+@app.route('/api/cupula/montegancedo/', methods=['GET'])
+def status():
+	response_json=json.dumps({'lat':"40 24 22 N"  ,'long':"3 50 19 O" , 'name':"Observatorio Montegancedo",'status':{'Azimut':sy.azimut,'Laps':sy.vueltas, 'Voltage': sy.voltage, 'Direction':sy.direction}})
+	return response_json	
+		
+@app.route('/api/cupula/montegancedo/tasks/<int:iden>', methods=['GET'])
+def returnTask(iden):
+	s=Query()
+	x=sy.table.get(s.id==iden)
+	print x
+	if x==None:
+		abort(404)
+	print x['id']
+	sy.task_json=json.dumps({'id':x['id'],'command':x['command']['command'],'time':x['time'],'status':x['status']})
+	return sy.task_json
 
 @app.route('/status', methods=['GET'])
-def status():
+def status2():
 	print "OK-NODE"
         return jsonify(tick='155')
-@app.route('/rderecha', methods=['GET'])
-def rderecha():
-        error=None
-	global logged
-        if not logged:
-                abort(401)
-        if request.method == 'GET':
-                print message
-                #print 'Enviado'
-                t.start()
-                t = threading.Thread(target=sy.send, args=(ser,"R",))
-                t.start()
-                #ser.write(message)
-        return str("OK")
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

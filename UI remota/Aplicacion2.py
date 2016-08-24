@@ -32,7 +32,7 @@ class Ui_Dialog(object):
     	password = raw_input('Password: ')	
     	username = str(username)
     	password = str(password)
-        r = requests.post('http://192.168.1.239:4000/login', data = {'username':username, 'password':password})
+        r = requests.post('http://192.168.1.239:5000/login', data = {'username':username, 'password':password})
     	print r
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(1023, 391)
@@ -516,35 +516,35 @@ class Ui_Dialog(object):
     def paradaEmergencia(self):
         print "Parada de Emergencia"
         message='I'
-        r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
+        r = requests.post('http://192.168.1.239:5000/command', data = {'command':message})
         print r
 
     def parada(self):
         print "Parada"
         message='S'
-        r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
+        r = requests.post('http://192.168.1.239:5000/command', data = {'command':message})
         print r
     def rDerecha(self):
         print "Rotando derecha"
         message='R'
         message=str(message)
-        r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
+        r = requests.post('http://192.168.1.239:5000/command', data = {'command':message})
         print r
     def rIzquierda(self):
         print "Rotando Izquierda"
         message='L'
-        r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
+        r = requests.post('http://192.168.1.239:5000/command', data = {'command':message})
         print r
     def home(self):
         print "Ir a Home"
         message='H'
-        r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
+        r = requests.post('http://192.168.1.239:5000/command', data = {'command':message})
         print r
     def enviar(self):
         message=self.lineEdit.text()
         #message='&'+str(message)+'#'
         print message
-        r = requests.post('http://192.168.1.239:4000/command', data = {'command':message})
+        r = requests.post('http://192.168.1.239:5000/command', data = {'command':message})
         print r
     def constantUpdate(self):
         file = cStringIO.StringIO(urllib.urlopen("http://192.168.1.239:8080/?action=snapshot").read())
