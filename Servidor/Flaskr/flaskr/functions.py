@@ -15,6 +15,7 @@ class system:
 	mutex = threading.Lock()
 	direction=""
 	azimut=0
+	offset=20
 	direction=""
 	voltage=""
 	vueltas=1
@@ -57,11 +58,15 @@ class system:
 			   
 			print "sigo viendo otra D"		
 			s=int(message[1:])
-			print str(s)
-                        if s<5 or s>355:
+			if s<5:
 				print "S:" +str(s)
 				s=5
 				message='D5'
+                                self.objective=s
+                        if s>355:
+				print "S:" +str(s)
+				s=355
+				message='D355'
                                 self.objective=s
 			if (s>=5 and s<=355):
 				if (s>self.azimut):
@@ -70,20 +75,21 @@ class system:
 						self.objective=(self.azimut+179)
                                         	self.nextObjective=s
                                         	print "Objetive: "+str(self.objective)+ "nextObjetive: "+str(self.nextObjective)
-                                        	self.send('D'+str(self.objective),ser)
+                                        	self.send('D'+str(self.objective+self.offset),ser)
 					else:	
 						print "No hago caso 1"
 						self.objective=s
-						self.send('D'+str(self.objective),ser)
+						self.send('D'+str(self.objective+self.offset),ser)
                 		if (s<self.azimut):
                                         if ((self.azimut-s)>=179):
 						print "Mando al otro lado 2"
-                                                self.objective=(self.azimut-170)
+                                                self.objective=(self.azimut-179)
                                                 self.nextObjective=s
                                                 print "Objetive: "+str(self.objective)+ "nextObjetive: "+str(self.nextObjective)
-                                                self.send('D'+str(self.objective),ser)
+                                                self.send('D'+str(self.objective+self.offset),ser)
                                         else:
-                                                self.send('D'+str(self.objective),ser)
+                                                self.objective=s
+                                                self.send('D'+str(self.objective+self.offset),ser)
                                                 print "No hago caso 2"
                                                 
 				                   
@@ -109,6 +115,11 @@ class system:
 		#os.system('./mjpg_streamer -i "./input_uvc.so -r 320x240 -y" -o "./output_http.so -w ./www"')
 	def refreshStatus(self,x,ser):
 		self.voltage=x.voltage
+		if x.azimut<self.offset:
+                        aux=1
+                else:
+                        aux=0
+		x.azimut=x.azimut-self.offset
 		if ((int(x.azimut)-int(self.azimut))>0) or ((int(x.azimut)-int(self.azimut))<-300) :
 			self.direction = 1
 		elif ((int(x.azimut)-int(self.azimut))<0) or ((int(x.azimut)-int(self.azimut))>300):
@@ -134,11 +145,13 @@ class system:
 					self.Objective=None
 		if self.nextObjective!=None:
 			if ((self.objective-x.azimut)<=2)and((self.objective-x.azimut)>=-2):
-				self.send('D'+str(self.nextObjective),ser)
+				self.send('D'+str(self.nextObjective+self.offset),ser)
 				self.objective=self.nextObjective
 				self.nextObjective=None
 									
-		print "Vueltas: "+ str(self.vueltas)		
+                print "Vueltas: "+ str(self.vueltas)
+                if aux:
+                        x.azimut=360+x.azimut        
 		self.azimut=x.azimut
 		print "Direccion: " + str(self.direction)
 	def checkRoutine(self,ser):
