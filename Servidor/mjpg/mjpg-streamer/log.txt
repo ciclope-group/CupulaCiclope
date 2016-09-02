@@ -577,3 +577,5 @@ Alarma 21:12:39
 &G# Response: &G”…ê€€€†º€€€€ # Azimut: 180 Voltage: 12 at 03:14:29 01/08/2016
 &G# Response: &G”…ê€€€†º€€€€ # Azimut: 180 Voltage: 12 at 03:14:31 01/08/2016
 &G# Response: &G”…ê€€€†º€€€€ # Azimut: 180 Voltage: 12 at 03:14:33 01/08/2016
+Error launching the camera 18:13:53
+Error launching the camera 18:16:57

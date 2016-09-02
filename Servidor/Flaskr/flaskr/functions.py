@@ -29,12 +29,11 @@ class system:
 	def empaquetar(self):
 		tamLog = os.path.getsize(sc.logDir)
 		print "Tamanio log "+ str(tamLog)
-		if tamLog > 1000000:
+		if tamLog > 10000000:
 			os.system('tar czvf log.tar.gz '+sc.logDir)
 			print "Empaquetado"
 			os.system('rm '+ sc.logDir)
 	def goto(self,message,ser):
-		print "Llego2"
 		if 'D' == str(message[0]):
 	               	''' s=int(message[1:])
 	                if ((s-self.azimut)<180)or ((s-self.azimut)<-180):
@@ -56,7 +55,6 @@ class system:
                                         print "Objetive: "+str(self.objective)+ "nextObjetive: "+str(self.nextObjective)
                                         self.send('D'+str(self.objective),ser)'''
 			   
-			print "sigo viendo otra D"		
 			s=int(message[1:])
 			if s<5:
 				print "S:" +str(s)
@@ -71,18 +69,18 @@ class system:
 			if (s>=5 and s<=355):
 				if (s>self.azimut):
 					if (self.azimut-s<=-179):
-						print "Mando al otro lado 1"	
+						print "Going in 2 steps CW"	
 						self.objective=(self.azimut+179)
                                         	self.nextObjective=s
                                         	print "Objetive: "+str(self.objective)+ "nextObjetive: "+str(self.nextObjective)
                                         	self.send('D'+str(self.objective+self.offset),ser)
 					else:	
-						print "No hago caso 1"
+						print "Going in 1 step CW"
 						self.objective=s
 						self.send('D'+str(self.objective+self.offset),ser)
                 		if (s<self.azimut):
                                         if ((self.azimut-s)>=179):
-						print "Mando al otro lado 2"
+						print "Going in 2 steps CCW"
                                                 self.objective=(self.azimut-179)
                                                 self.nextObjective=s
                                                 print "Objetive: "+str(self.objective)+ "nextObjetive: "+str(self.nextObjective)
@@ -90,13 +88,14 @@ class system:
                                         else:
                                                 self.objective=s
                                                 self.send('D'+str(self.objective+self.offset),ser)
-                                                print "No hago caso 2"
+                                                print "Going in 1 step CCW"
                                                 
 				                   
 
 	def send(self,message,ser):
 		if sc.board==1:
                         if self.on==True:
+                                self.log("Sended "+message)
                                 self.mutex.acquire()
                                 x=messageObject(ser,message)
                                 x.send()
@@ -142,6 +141,7 @@ class system:
 	                        		self.table.update({'status':'completed'},component.id==int(data['id']))
 					except:
 						print "Cant update table"
+						self.log("Cant update table")
 					self.Objective=None
 		if self.nextObjective!=None:
 			if ((self.objective-x.azimut)<=2)and((self.objective-x.azimut)>=-2):
@@ -157,9 +157,6 @@ class system:
 	def checkRoutine(self,ser):
             while (not self._threadStopper_.isSet()):
 		self.send('G',ser)
-		with open('/home/cupula/CupulaCiclope/Servidor/logG', 'a') as file_:
-                	file_.write("Refrescado estatus a las"+" "+time.strftime("%H:%M:%S") + "\n")
-                        file_.close()
                 time.sleep(1)
 		'''t = threading.Timer(1.0, self.checkRoutine, [ser])
 		t.daemon = True
@@ -170,20 +167,20 @@ class system:
 
 	def test(self,ser):
 		ser.write("&G#")
-		t2 = threading.Timer(0.5, alarma)
+		t2 = threading.Timer(0.5, alarma,args=(ser,))
 		t2.daemon=True
 		t2.start()
 		sArduino =str(ser.readline())
 		sArduino = sArduino[1:-3]
 		if 'GLS' in sArduino:
-			with open(sc.logDir, 'a') as file_:
-	    			file_.write(sArduino+" "+time.strftime("%H:%M:%S") + "\n")
-				file_.close()
-
-			t2.cancel()
+			self.log(sArduino)
+                        t2.cancel()
 
 	def alarma(self,):
 		print "Alarma"
-		with open(sc.logDir, 'a') as file_:
-	        	file_.write("Alarma"+" "+time.strftime("%H:%M:%S") + "\n")
+		self.senf("I",ser)
+		self.log("Alarma")
+	def log(selg, message):
+                with open(sc.logDir, 'a') as file_:
+	        	file_.write(message+" "+time.strftime("%H:%M:%S") + "\n")
 	        	file_.close()

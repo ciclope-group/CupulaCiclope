@@ -49,6 +49,7 @@ if sc.camera==1:
 			print newPid2
 	except:
 		print "Error launching the camera"
+		sy.log("Error launching the camera")
 #Launching Comunication with board if sc.boardPort is active
 if sc.board==1:
 	try:
@@ -60,9 +61,10 @@ if sc.board==1:
 		print "Launched comunication with board"
 	except:
 		print "Error launching the board"
+		sy.log("Error launching the board")
 else:
 	print 'Controller board variable is not activated'
-
+        sy.log('Controller board variable is not activated')
 
 
 @app.route('/api/cupula/montegancedo/task', methods=['POST'])
@@ -84,22 +86,25 @@ def task():
 		#print sy.task_json
 		message=str(message['command'])
 		#print message
-		if 'H' in message:
+		if 'SZ' in message:
+                        sy.offset==sy.azimut
+		elif 'H' in message:
 			message='D'+str(sc.home)
-			return
-		if 'D' in message:
-			#print "Hay una D"
 			t = threading.Thread(target=sy.goto, args=(message,ser,))
                         t.start()
                         return
-		if 'ON' in message:
+		elif 'D' in message:
+			t = threading.Thread(target=sy.goto, args=(message,ser,))
+                        t.start()
+                        return
+		elif 'ON' in message:
                         sy._threadStopper_=threading.Event()
                         sy._thread_=threading.Timer(2,sy.checkRoutine,args=(ser,))
                         sy._thread_.daemon=True
 			sy.on=True
 			sy._thread_.start()
 			return
-		if 'OFF' in message:
+		elif 'OFF' in message:
 			sy.on=False
 			sy._threadStopper_.set()
 			return
@@ -110,7 +115,6 @@ def task():
 				t.start()
 			except:
 				print "no lanza proceso"
-		#ser.write(message)
 		return sy.task_json
 @app.route('/api/cupula/montegancedo/', methods=['GET'])
 def status():
@@ -127,12 +131,6 @@ def returnTask(iden):
 	print x['id']
 	sy.task_json=json.dumps({'id':x['id'],'command':x['command']['command'],'time':x['time'],'status':x['status']})
 	return sy.task_json
-
-@app.route('/status', methods=['GET'])
-def status2():
-	print "OK-NODE"
-        return jsonify(tick='155')
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -151,10 +149,6 @@ def login():
 			return redirect(url_for('command'))
 	return render_template('login.html', error=error)
 
-@app.route('/azimut', methods=['GET'])
-def azimut():
-	import servidorConf as sc
-	return str(sc.acimut)
 @app.route('/logout')
 def logout():
 	global logged
@@ -162,14 +156,8 @@ def logout():
 	#session.pop('logged_in', None)
 	flash('You were logged out')
 	return redirect(url_for('show_entries'))
-@app.route('/ticks')
-def ticks():
-        t="Ticks: " + str(sc.ticks)
-        return t
-
 
 
 if __name__ == '__main__':
 	print "////////////// Starting Cupula Ciclope's server//////////////"
-	#initServer()
 	app.run(host='0.0.0.0',port=80)
