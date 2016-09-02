@@ -4,7 +4,7 @@ import sys
 #Importamos el archivo de configuracion
 import config as c
 #Establecemos las credenciales
-credentials = pika.PlainCredentials('cupula', 'informaticaciclope')
+credentials = pika.PlainCredentials('admin', 'default')
 #Establecemos la conexion al servidor a traves del puerto 5672
 connection = pika.BlockingConnection(pika.ConnectionParameters(c.urlServer, 5672,'/',credentials))
 channel = connection.channel()
