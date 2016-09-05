@@ -14,10 +14,45 @@ from functions import system
 import json
 import time
 from tinydb import TinyDB, where,Query
-
-
+import pika
+#Importamos el archivo de configuracion
+import config as c
 
 sy=system()
+
+
+def cola(sy):
+        #Establecemos las credenciales
+        credentials = pika.PlainCredentials('admin', 'default')
+        #Establecemos la conexion al servidor a traves del puerto 5672
+        connection = pika.BlockingConnection(pika.ConnectionParameters(c.urlServer, 5672,'/',credentials))
+        channel = connection.channel()
+        #Declaramos La cola por la que recibiremos (Por si acaso no esta creada aun)
+        channel.queue_declare(queue=c.me, durable=True)
+        #Declaramos las colas a las que enviaremos con emitter.py, por si acaso no estan declaradas aun
+        for x in c.list:
+            channel.queue_declare(queue=x, durable=True)
+        #Hacemos en binding de los exchanges con las colas, teniendo en cuenta el routing key
+        for x,y in zip(c.list,c.severity):
+            channel.exchange_declare(exchange=x,
+                                    type='direct')
+            channel.queue_bind(exchange=x,
+                               queue=c.me,
+                               routing_key=y)
+        def callback(ch, method, properties, body):
+                print(" [x] %r" % (body))
+                if sy.follow:
+                        if 'D' in body:
+                                t = threading.Thread(target=sy.goto, args=(body,ser,))
+                                t.start()
+                                return
+
+        channel.basic_consume(callback,
+                                queue=c.me,
+                                no_ack=True)
+        channel.start_consuming()
+        print 'Receptor cola activado'
+
 # configuration
 DEBUG = False
 SECRET_KEY = 'development key'
@@ -54,6 +89,7 @@ if sc.camera==1:
 if sc.board==1:
 	try:
 		ser = serial.Serial(sc.boardPort, 9600,timeout=3)
+                sy.ser=ser
 		'''t=threading.Timer(2,sy.checkRoutine,args=(ser,))
 		t.daemon=True
 		t.start()'''
@@ -65,6 +101,8 @@ if sc.board==1:
 else:
 	print 'Controller board variable is not activated'
         sy.log('Controller board variable is not activated')
+t = threading.Thread(target=cola, args=(sy,))
+t.start()
 
 
 @app.route('/api/cupula/montegancedo/task', methods=['POST'])
@@ -88,6 +126,10 @@ def task():
 		#print message
 		if 'SZ' in message:
                         sy.offset==sy.azimut
+                elif 'followOn' in message:
+                        sy.follow=True
+                elif 'followOff' in message:
+                        sy.follow=False
 		elif 'H' in message:
 			message='D'+str(sc.home)
 			t = threading.Thread(target=sy.goto, args=(message,ser,))
@@ -98,10 +140,12 @@ def task():
                         t.start()
                         return
 		elif 'ON' in message:
+                        print "Entro"
                         sy._threadStopper_=threading.Event()
                         sy._thread_=threading.Timer(2,sy.checkRoutine,args=(ser,))
                         sy._thread_.daemon=True
 			sy.on=True
+			
 			sy._thread_.start()
 			return
 		elif 'OFF' in message:

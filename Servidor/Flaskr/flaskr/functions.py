@@ -22,6 +22,8 @@ class system:
 	objective=None
 	nextObjective=None
 	on=False
+	follow=False
+	ser=""
 	db=TinyDB('/home/cupula/CupulaCiclope/Servidor/Flaskr/flaskr/database.json')
 	table=db.table('history')
 

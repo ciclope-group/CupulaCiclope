@@ -8,7 +8,7 @@ for linea in salida_estandar:
         if "p" in pid:
                 pid= linea.split(" ")[0]
         print pid
-        os.popen("sudo kill -9 "+ pid)
+        os.popen("sudo kill "+ pid)
 
 
 

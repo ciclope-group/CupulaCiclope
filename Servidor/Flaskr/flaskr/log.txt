@@ -899,3 +899,650 @@ Sended G 18:16:50
 Sended G 18:16:52
 &G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:16:53 02/09/2016
 Sended G 18:16:54
+Sended G 18:50:12
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:50:13 03/09/2016
+Sended G 18:50:14
+&G# Response: &G”€ç»€€€†¼€€€€ # Azimut: 4 Voltage: 12 at 18:50:15 03/09/2016
+Sended G 18:50:16
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:50:17 03/09/2016
+Sended G 18:50:18
+&G# Response: &G”€ç»€€€†¼€€€€ # Azimut: 4 Voltage: 12 at 18:50:19 03/09/2016
+Sended G 18:50:20
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:21 03/09/2016
+Sended G 18:50:22
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:23 03/09/2016
+Sended G 18:50:24
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:25 03/09/2016
+Sended G 18:50:26
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:27 03/09/2016
+Sended G 18:50:28
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:29 03/09/2016
+Sended G 18:50:30
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:31 03/09/2016
+Sended G 18:50:32
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:33 03/09/2016
+Sended G 18:50:34
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:50:35 03/09/2016
+Sended G 18:50:36
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:37 03/09/2016
+Sended G 18:50:38
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:39 03/09/2016
+Sended G 18:50:40
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:41 03/09/2016
+Sended G 18:50:42
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:43 03/09/2016
+Sended G 18:50:44
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:45 03/09/2016
+Sended G 18:50:46
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:47 03/09/2016
+Sended G 18:50:48
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:49 03/09/2016
+Sended G 18:50:50
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:50:51 03/09/2016
+Sended G 18:50:52
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:50:53 03/09/2016
+Sended G 18:50:54
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:50:55 03/09/2016
+Sended G 18:50:56
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:50:57 03/09/2016
+Sended G 18:50:58
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:50:59 03/09/2016
+Sended G 18:51:00
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:51:01 03/09/2016
+Sended G 18:51:02
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:51:03 03/09/2016
+Sended G 18:51:04
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:51:05 03/09/2016
+Sended G 18:51:06
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:51:07 03/09/2016
+Sended G 18:51:08
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:51:09 03/09/2016
+Sended G 18:51:10
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:51:11 03/09/2016
+Sended G 18:51:12
+&G# Response: &G”€ç»€€€†¼€€€€ # Azimut: 4 Voltage: 12 at 18:51:13 03/09/2016
+Sended G 18:51:14
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:51:15 03/09/2016
+Sended G 18:51:16
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:51:17 03/09/2016
+Sended G 18:51:18
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:51:19 03/09/2016
+Sended G 18:51:20
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:51:21 03/09/2016
+Sended G 18:51:22
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:51:23 03/09/2016
+Sended G 18:51:24
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:51:25 03/09/2016
+Sended G 18:51:26
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:51:27 03/09/2016
+Sended G 18:51:28
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:51:29 03/09/2016
+Sended G 18:51:30
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:51:31 03/09/2016
+Sended G 18:51:32
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:51:33 03/09/2016
+Sended G 18:51:34
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:51:35 03/09/2016
+Sended G 18:51:36
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:51:38 03/09/2016
+Sended G 18:51:39
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:51:40 03/09/2016
+Sended G 18:51:41
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:51:42 03/09/2016
+Sended G 18:52:54
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:52:55 03/09/2016
+Sended G 18:52:56
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:52:57 03/09/2016
+Sended G 18:52:58
+&G# Response: &G”€ç»€€€†¼€€€€ # Azimut: 4 Voltage: 12 at 18:52:59 03/09/2016
+Sended G 18:53:00
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:53:01 03/09/2016
+Sended G 18:53:02
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:53:03 03/09/2016
+Sended G 18:53:04
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:53:05 03/09/2016
+Sended G 18:53:06
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:53:07 03/09/2016
+Sended G 18:53:08
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:53:09 03/09/2016
+Sended G 18:53:10
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:53:11 03/09/2016
+Sended G 18:53:12
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:53:13 03/09/2016
+Sended G 18:53:14
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:53:15 03/09/2016
+Sended G 18:53:16
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:53:17 03/09/2016
+Sended G 18:53:18
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:53:19 03/09/2016
+Sended G 18:53:20
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:53:21 03/09/2016
+Sended G 18:53:22
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:53:23 03/09/2016
+Sended G 18:53:24
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:53:25 03/09/2016
+Sended G 18:53:26
+Sended G 18:55:31
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:55:32 03/09/2016
+Sended G 18:55:33
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:55:34 03/09/2016
+Sended G 18:55:35
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:55:36 03/09/2016
+Sended G 18:55:37
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:55:38 03/09/2016
+Sended G 18:55:39
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:55:40 03/09/2016
+Sended G 18:55:41
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:55:42 03/09/2016
+Sended G 18:55:43
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 18:55:44 03/09/2016
+Sended G 18:55:45
+&G# Response: &G”€ç»€€€†¼€€€€ # Azimut: 4 Voltage: 12 at 18:55:46 03/09/2016
+Sended G 18:55:47
+Sended D70 18:55:47
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 18:55:48 03/09/2016
+Sended G 18:55:49
+&Z0910<# Response: &# Azimut:  Voltage:  at 18:55:49 03/09/2016
+&G# Response: &G´€çà€€€†¶€€€€ # Azimut: 5 Voltage: 12 at 18:55:50 03/09/2016
+Sended G 18:55:53
+&G# Response: &G´†Ú€€€†·€€€€ # Azimut: 12 Voltage: 12 at 18:55:54 03/09/2016
+Sended G 18:55:55
+&G# Response: &G´¡£€€€†´€€€€ # Azimut: 18 Voltage: 12 at 18:55:56 03/09/2016
+Sended G 18:55:57
+&G# Response: &G´Á¥€€€†º€€€€ # Azimut: 26 Voltage: 12 at 18:55:58 03/09/2016
+Sended G 18:55:59
+&G# Response: &G´Ûà€€€†º€€€€ # Azimut: 33 Voltage: 12 at 18:56:00 03/09/2016
+Sended G 18:56:01
+&G# Response: &G´ò‘€€€†µ€€€€ # Azimut: 38 Voltage: 12 at 18:56:02 03/09/2016
+Sended G 18:56:03
+&G# Response: &G´‚ƒœ€€€†·€€€€ # Azimut: 42 Voltage: 12 at 18:56:04 03/09/2016
+Sended G 18:56:05
+&G# Response: &G´‚©€€€†¹€€€€ # Azimut: 45 Voltage: 12 at 18:56:06 03/09/2016
+Sended G 18:56:07
+&G# Response: &G´‚š¯€€€†·€€€€ # Azimut: 48 Voltage: 12 at 18:56:08 03/09/2016
+Sended G 18:56:09
+&G# Response: &G”‚¢•€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:10 03/09/2016
+Sended G 18:56:11
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:56:12 03/09/2016
+Sended G 18:56:13
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:56:14 03/09/2016
+Sended G 18:56:15
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:16 03/09/2016
+Sended G 18:56:17
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:56:18 03/09/2016
+Sended G 18:56:19
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:56:20 03/09/2016
+Sended G 18:56:21
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:22 03/09/2016
+Sended G 18:56:23
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:24 03/09/2016
+Sended G 18:56:25
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:26 03/09/2016
+Sended G 18:56:27
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:56:28 03/09/2016
+Sended G 18:56:29
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:30 03/09/2016
+Sended G 18:56:31
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:56:32 03/09/2016
+Sended G 18:56:33
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:34 03/09/2016
+Sended G 18:56:35
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:56:36 03/09/2016
+Sended G 18:56:37
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:56:38 03/09/2016
+Sended G 18:56:39
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:40 03/09/2016
+Sended G 18:56:41
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:56:42 03/09/2016
+Sended G 18:56:43
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:44 03/09/2016
+Sended G 18:56:45
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:56:46 03/09/2016
+Sended G 18:56:47
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:48 03/09/2016
+Sended G 18:56:49
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:50 03/09/2016
+Sended G 18:56:51
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:56:52 03/09/2016
+Sended G 18:56:53
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:56:54 03/09/2016
+Sended G 18:56:55
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:56 03/09/2016
+Sended G 18:56:57
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:56:59 03/09/2016
+Sended G 18:57:00
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:57:01 03/09/2016
+Sended G 18:57:02
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:03 03/09/2016
+Sended G 18:57:04
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:05 03/09/2016
+Sended G 18:57:06
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:07 03/09/2016
+Sended G 18:57:08
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:57:09 03/09/2016
+Sended G 18:57:10
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:57:11 03/09/2016
+Sended G 18:57:12
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:13 03/09/2016
+Sended G 18:57:14
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:15 03/09/2016
+Sended G 18:57:16
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:17 03/09/2016
+Sended G 18:57:18
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:19 03/09/2016
+Sended G 18:57:20
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:57:21 03/09/2016
+Sended G 18:57:22
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:23 03/09/2016
+Sended G 18:57:24
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:25 03/09/2016
+Sended G 18:57:26
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:57:27 03/09/2016
+Sended G 18:57:28
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:29 03/09/2016
+Sended G 18:57:30
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:57:31 03/09/2016
+Sended G 18:57:32
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:57:33 03/09/2016
+Sended G 18:57:34
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:57:35 03/09/2016
+Sended G 18:57:36
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:37 03/09/2016
+Sended G 18:57:38
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:39 03/09/2016
+Sended G 18:57:40
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:41 03/09/2016
+Sended G 18:57:42
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:57:43 03/09/2016
+Sended G 18:57:44
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:57:45 03/09/2016
+Sended G 18:57:46
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:47 03/09/2016
+Sended G 18:57:48
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:49 03/09/2016
+Sended G 18:57:50
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:51 03/09/2016
+Sended G 18:57:52
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:53 03/09/2016
+Sended G 18:57:54
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:57:55 03/09/2016
+Sended G 18:57:56
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:57 03/09/2016
+Sended G 18:57:58
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:57:59 03/09/2016
+Sended G 18:58:00
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:01 03/09/2016
+Sended G 18:58:02
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:03 03/09/2016
+Sended G 18:58:04
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:05 03/09/2016
+Sended G 18:58:06
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:07 03/09/2016
+Sended G 18:58:08
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:09 03/09/2016
+Sended G 18:58:10
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:11 03/09/2016
+Sended G 18:58:12
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:13 03/09/2016
+Sended G 18:58:14
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:58:15 03/09/2016
+Sended G 18:58:16
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:58:17 03/09/2016
+Sended G 18:58:18
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:19 03/09/2016
+Sended G 18:58:20
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:21 03/09/2016
+Sended G 18:58:22
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:23 03/09/2016
+Sended G 18:58:24
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:25 03/09/2016
+Sended G 18:58:26
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:27 03/09/2016
+Sended G 18:58:28
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:58:29 03/09/2016
+Sended G 18:58:30
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:31 03/09/2016
+Sended G 18:58:32
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:33 03/09/2016
+Sended G 18:58:34
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:58:35 03/09/2016
+Sended G 18:58:36
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:37 03/09/2016
+Sended G 18:58:38
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:39 03/09/2016
+Sended G 18:58:40
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:58:41 03/09/2016
+Sended G 18:58:42
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:43 03/09/2016
+Sended G 18:58:44
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:58:45 03/09/2016
+Sended G 18:58:46
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:47 03/09/2016
+Sended G 18:58:48
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:49 03/09/2016
+Sended G 18:58:50
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:51 03/09/2016
+Sended G 18:58:52
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:58:53 03/09/2016
+Sended G 18:58:54
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:58:55 03/09/2016
+Sended G 18:58:56
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:58:57 03/09/2016
+Sended G 18:58:58
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:58:59 03/09/2016
+Sended G 18:59:00
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:01 03/09/2016
+Sended G 18:59:02
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:59:03 03/09/2016
+Sended G 18:59:04
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:05 03/09/2016
+Sended G 18:59:06
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:59:07 03/09/2016
+Sended G 18:59:08
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:09 03/09/2016
+Sended G 18:59:10
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:11 03/09/2016
+Sended G 18:59:12
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:59:13 03/09/2016
+Sended G 18:59:14
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:15 03/09/2016
+Sended G 18:59:16
+&G# Response: &G”‚¢œ€€€†¼€€€€ # Azimut: 50 Voltage: 12 at 18:59:17 03/09/2016
+Sended G 18:59:18
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:19 03/09/2016
+Sended G 18:59:20
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:21 03/09/2016
+Sended G 18:59:22
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:23 03/09/2016
+Sended G 18:59:24
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:25 03/09/2016
+Sended G 18:59:26
+&G# Response: &G”‚¢œ€€€†¼€€€€ # Azimut: 50 Voltage: 12 at 18:59:27 03/09/2016
+Sended G 18:59:28
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:29 03/09/2016
+Sended G 18:59:30
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:31 03/09/2016
+Sended G 18:59:32
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:33 03/09/2016
+Sended G 18:59:34
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:59:35 03/09/2016
+Sended G 18:59:36
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:59:37 03/09/2016
+Sended G 18:59:38
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:39 03/09/2016
+Sended G 18:59:40
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:41 03/09/2016
+Sended G 18:59:42
+&G# Response: &G”‚¢œ€€€†¼€€€€ # Azimut: 50 Voltage: 12 at 18:59:43 03/09/2016
+Sended G 18:59:44
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:45 03/09/2016
+Sended G 18:59:46
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:59:47 03/09/2016
+Sended G 18:59:48
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:49 03/09/2016
+Sended G 18:59:50
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:51 03/09/2016
+Sended G 18:59:52
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:53 03/09/2016
+Sended G 18:59:54
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:55 03/09/2016
+Sended G 18:59:56
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 18:59:57 03/09/2016
+Sended G 18:59:58
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 18:59:59 03/09/2016
+Sended G 19:00:00
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 19:00:01 03/09/2016
+Sended G 19:00:02
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:03 03/09/2016
+Sended G 19:00:04
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:05 03/09/2016
+Sended G 19:00:06
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:07 03/09/2016
+Sended G 19:00:08
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:09 03/09/2016
+Sended G 19:00:10
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:11 03/09/2016
+Sended G 19:00:12
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 19:00:13 03/09/2016
+Sended G 19:00:14
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 19:00:15 03/09/2016
+Sended G 19:00:16
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:17 03/09/2016
+Sended G 19:00:18
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 19:00:19 03/09/2016
+Sended G 19:00:20
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 19:00:21 03/09/2016
+Sended G 19:00:22
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:23 03/09/2016
+Sended G 19:00:24
+&G# Response: &G”‚¢œ€€€†¼€€€€ # Azimut: 50 Voltage: 12 at 19:00:25 03/09/2016
+Sended G 19:00:26
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:27 03/09/2016
+Sended G 19:00:28
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 19:00:29 03/09/2016
+Sended G 19:00:30
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:31 03/09/2016
+Sended G 19:00:32
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:33 03/09/2016
+Sended G 19:00:34
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:35 03/09/2016
+Sended G 19:00:36
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:37 03/09/2016
+Sended G 19:00:38
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:39 03/09/2016
+Sended G 19:00:40
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:41 03/09/2016
+Sended G 19:00:42
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:43 03/09/2016
+Sended G 19:00:44
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 19:00:45 03/09/2016
+Sended G 19:00:46
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:47 03/09/2016
+Sended G 19:00:48
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 19:00:49 03/09/2016
+Sended G 19:00:50
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:51 03/09/2016
+Sended G 19:00:52
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:53 03/09/2016
+Sended G 19:00:54
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:55 03/09/2016
+Sended G 19:00:56
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:57 03/09/2016
+Sended G 19:00:58
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:00:59 03/09/2016
+Sended G 19:01:00
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:01:01 03/09/2016
+Sended G 19:01:02
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:01:03 03/09/2016
+Sended G 19:01:04
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:01:05 03/09/2016
+Sended G 19:01:06
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:01:08 03/09/2016
+Sended G 19:01:09
+&G# Response: &G”‚¢œ€€€†¼€€€€ # Azimut: 50 Voltage: 12 at 19:01:10 03/09/2016
+Sended G 19:01:11
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 19:01:12 03/09/2016
+Sended G 19:01:13
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:01:14 03/09/2016
+Sended G 19:01:15
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:01:16 03/09/2016
+Sended G 19:01:17
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:01:18 03/09/2016
+Sended G 19:01:19
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 19:01:20 03/09/2016
+Sended G 19:01:21
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:01:22 03/09/2016
+Sended G 19:01:23
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:01:24 03/09/2016
+Sended G 19:01:25
+&G# Response: &G”‚¢œ€€€†º€€€€ # Azimut: 50 Voltage: 12 at 19:01:26 03/09/2016
+Sended G 19:01:27
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:01:28 03/09/2016
+Sended G 19:01:29
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:01:30 03/09/2016
+Sended G 19:01:31
+&G# Response: &G”‚¢œ€€€†¼€€€€ # Azimut: 50 Voltage: 12 at 19:01:32 03/09/2016
+Sended G 19:01:33
+Sended D25 19:01:34
+&G# Response: &G”‚¢œ€€€†»€€€€ # Azimut: 50 Voltage: 12 at 19:01:34 03/09/2016
+Sended G 19:01:35
+&Z033<=# Response: &# Azimut:  Voltage:  at 19:01:35 03/09/2016
+&G# Response: &G´‚¡ø€€€†¶€€€€ # Azimut: 49 Voltage: 12 at 19:01:36 03/09/2016
+Sended G 19:01:37
+&G# Response: &G´‚•®€€€†»€€€€ # Azimut: 46 Voltage: 12 at 19:01:38 03/09/2016
+Sended G 19:01:39
+&G# Response: &G´ı–€€€†µ€€€€ # Azimut: 41 Voltage: 12 at 19:01:40 03/09/2016
+Sended G 19:01:41
+&G# Response: &G´âÑ€€€†´€€€€ # Azimut: 34 Voltage: 12 at 19:01:42 03/09/2016
+Sended G 19:01:43
+&G# Response: &G´È€€€†µ€€€€ # Azimut: 28 Voltage: 12 at 19:01:44 03/09/2016
+Sended G 19:01:45
+&G# Response: &G´­Ğ€€€†¸€€€€ # Azimut: 21 Voltage: 12 at 19:01:46 03/09/2016
+Sended G 19:01:47
+&G# Response: &G´—¨€€€†¶€€€€ # Azimut: 16 Voltage: 12 at 19:01:48 03/09/2016
+Sended G 19:01:49
+&G# Response: &G´†¡€€€†¶€€€€ # Azimut: 12 Voltage: 12 at 19:01:50 03/09/2016
+Sended G 19:01:51
+&G# Response: &G´€ùœ€€€†¹€€€€ # Azimut: 9 Voltage: 12 at 19:01:52 03/09/2016
+Sended G 19:01:53
+&G# Response: &G´€ï€€€†¹€€€€ # Azimut: 6 Voltage: 12 at 19:01:54 03/09/2016
+Sended G 19:01:55
+&G# Response: &G”€çÃ€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:01:56 03/09/2016
+Sended G 19:01:57
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:01:58 03/09/2016
+Sended G 19:01:59
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:02:00 03/09/2016
+Sended G 19:02:01
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:02:02 03/09/2016
+Sended G 19:02:03
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:02:04 03/09/2016
+Sended G 19:02:05
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:02:06 03/09/2016
+Sended G 19:02:07
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:02:08 03/09/2016
+Sended G 19:02:09
+&G# Response: &G”€ç»€€€†¼€€€€ # Azimut: 4 Voltage: 12 at 19:02:10 03/09/2016
+Sended G 19:02:11
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:02:12 03/09/2016
+Sended G 19:02:13
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:02:14 03/09/2016
+Sended G 19:02:15
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:02:16 03/09/2016
+Sended G 19:02:17
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:02:18 03/09/2016
+Sended G 19:02:20
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:02:21 03/09/2016
+Sended G 19:02:22
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:02:23 03/09/2016
+Sended G 19:02:24
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:02:25 03/09/2016
+Sended G 19:02:26
+Sended G 19:30:27
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:30:28 03/09/2016
+Sended G 19:30:29
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:30:30 03/09/2016
+Sended G 19:30:31
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:30:32 03/09/2016
+Sended G 19:30:33
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:30:34 03/09/2016
+Sended G 19:30:35
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:30:36 03/09/2016
+Sended R 19:30:37
+Sended G 19:30:37
+&R# Response: &# Azimut:  Voltage:  at 19:30:38 03/09/2016
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:30:39 03/09/2016
+Sended G 19:30:40
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:30:41 03/09/2016
+Sended G 19:30:42
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:30:43 03/09/2016
+Sended G 19:30:44
+&G# Response: &G”€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:30:45 03/09/2016
+Sended G 19:30:46
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:30:47 03/09/2016
+Sended G 19:30:48
+Sended D70 19:30:49
+&G# Response: &G”€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:30:49 03/09/2016
+Sended G 19:30:50
+&Z0910<# Response: &# Azimut:  Voltage:  at 19:30:50 03/09/2016
+&G# Response: &G´€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:30:51 03/09/2016
+Sended G 19:30:52
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:30:53 03/09/2016
+Sended G 19:30:54
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:30:55 03/09/2016
+Sended G 19:30:56
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:30:57 03/09/2016
+Sended G 19:30:58
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:30:59 03/09/2016
+Sended G 19:31:00
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:31:01 03/09/2016
+Sended G 19:31:02
+&G# Response: &G´€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:31:03 03/09/2016
+Sended G 19:31:04
+&G# Response: &G´€ç»€€€†¼€€€€ # Azimut: 4 Voltage: 12 at 19:31:05 03/09/2016
+Sended G 19:31:06
+&G# Response: &G´€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:31:07 03/09/2016
+Sended G 19:31:08
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:31:09 03/09/2016
+Sended G 19:31:10
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:31:11 03/09/2016
+Sended D70 19:31:11
+Sended G 19:31:12
+&Z0910<# Response: &# Azimut:  Voltage:  at 19:31:12 03/09/2016
+&G# Response: &G´€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:31:13 03/09/2016
+Sended G 19:31:14
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:31:15 03/09/2016
+Sended G 19:31:16
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:31:17 03/09/2016
+Sended G 19:31:18
+Sended L 19:31:18
+&G# Response: &G´€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:31:19 03/09/2016
+Sended G 19:31:20
+&L# Response: &# Azimut:  Voltage:  at 19:31:20 03/09/2016
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:31:21 03/09/2016
+Sended G 19:31:22
+&G# Response: &G´€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:31:23 03/09/2016
+Sended G 19:31:24
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:31:25 03/09/2016
+Sended G 19:31:26
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:31:27 03/09/2016
+Sended G 19:31:28
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:31:29 03/09/2016
+Sended G 19:31:30
+&G# Response: &G´€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:31:31 03/09/2016
+Sended G 19:31:32
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:31:33 03/09/2016
+Sended G 19:32:22
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:32:23 03/09/2016
+Sended G 19:32:24
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:32:25 03/09/2016
+Sended L 19:32:25
+Sended G 19:32:26
+&L# Response: &# Azimut:  Voltage:  at 19:32:26 03/09/2016
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:32:27 03/09/2016
+Sended G 19:32:28
+&G# Response: &G´€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:32:29 03/09/2016
+Sended G 19:32:30
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:32:31 03/09/2016
+Sended R 19:32:32
+Sended G 19:32:32
+&R# Response: &# Azimut:  Voltage:  at 19:32:33 03/09/2016
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:32:34 03/09/2016
+Sended G 19:32:35
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:32:36 03/09/2016
+Sended S 19:32:36
+Sended G 19:32:37
+&S# Response: &# Azimut:  Voltage:  at 19:32:37 03/09/2016
+&G# Response: &G´€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:32:38 03/09/2016
+Sended L 19:32:39
+Sended G 19:32:39
+&L# Response: &# Azimut:  Voltage:  at 19:32:40 03/09/2016
+&G# Response: &G´€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:32:41 03/09/2016
+Sended G 19:32:42
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:32:43 03/09/2016
+Sended S 19:32:44
+Sended G 19:32:44
+&S# Response: &# Azimut:  Voltage:  at 19:32:45 03/09/2016
+&G# Response: &G´€ç»€€€†º€€€€ # Azimut: 4 Voltage: 12 at 19:32:46 03/09/2016
+Sended G 19:32:47
+&G# Response: &G´€ç»€€€†»€€€€ # Azimut: 4 Voltage: 12 at 19:32:48 03/09/2016
+Sended G 19:32:49
