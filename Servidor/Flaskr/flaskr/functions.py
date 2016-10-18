@@ -15,7 +15,7 @@ class system:
 	mutex = threading.Lock()
 	direction=""
 	azimut=0
-	offset=20
+	offset=0
 	direction=""
 	voltage=""
 	vueltas=1

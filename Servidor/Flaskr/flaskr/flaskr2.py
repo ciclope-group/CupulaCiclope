@@ -134,11 +134,10 @@ def task():
 			message='D'+str(sc.home)
 			t = threading.Thread(target=sy.goto, args=(message,ser,))
                         t.start()
-                        return
 		elif 'D' in message:
 			t = threading.Thread(target=sy.goto, args=(message,ser,))
                         t.start()
-                        return
+                        
 		elif 'ON' in message:
                         print "Entro"
                         sy._threadStopper_=threading.Event()
@@ -147,11 +146,9 @@ def task():
 			sy.on=True
 			
 			sy._thread_.start()
-			return
 		elif 'OFF' in message:
 			sy.on=False
 			sy._threadStopper_.set()
-			return
 			
 		else:
 			try:
