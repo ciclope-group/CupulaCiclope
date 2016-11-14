@@ -606,3 +606,98 @@ Error launching the camera 12:51:52
 Error launching the camera 13:02:21
 Error launching the camera 16:39:17
 Error launching the camera 08:49:22
+Error launching the camera 11:53:45
+Error launching the camera 11:54:33
+Error launching the camera 11:54:49
+Error launching the camera 11:55:41
+Error launching the camera 12:14:23
+Error launching the camera 12:24:53
+Error launching the camera 16:30:42
+Error launching the camera 16:38:25
+Error launching the camera 17:28:41
+Error launching the camera 15:45:58
+Error launching the board 15:45:58
+Error launching the camera 15:47:57
+Error launching the board 15:47:57
+Error launching the camera 15:54:29
+Error launching the camera 16:11:42
+Error launching the camera 16:14:36
+Error launching the camera 16:16:16
+Error launching the camera 07:53:49
+Error launching the camera 07:54:46
+Error launching the camera 07:56:52
+Error launching the camera 07:58:29
+Error launching the camera 08:15:09
+Sended G 08:15:28
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:15:29 20/10/2016
+Sended G 08:15:30
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:15:31 20/10/2016
+Sended G 08:15:32
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:15:33 20/10/2016
+Sended G 08:15:34
+&G# Response: &G”¾´€€€†µ€€€€ # Azimut: 45 Voltage: 12 at 08:15:35 20/10/2016
+Sended G 08:15:36
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:15:37 20/10/2016
+Sended G 08:15:38
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:15:39 20/10/2016
+Sended G 08:15:40
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:15:41 20/10/2016
+Sended G 08:15:42
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:15:43 20/10/2016
+Sended G 08:15:44
+&G# Response: &G”¾´€€€†·€€€€ # Azimut: 45 Voltage: 12 at 08:15:45 20/10/2016
+Sended G 08:15:46
+&G# Response: &G”¾´€€€†·€€€€ # Azimut: 45 Voltage: 12 at 08:15:47 20/10/2016
+Sended G 08:15:48
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:15:49 20/10/2016
+Sended G 08:15:50
+&G# Response: &G”¾´€€€†·€€€€ # Azimut: 45 Voltage: 12 at 08:15:51 20/10/2016
+Sended G 08:15:52
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:15:53 20/10/2016
+Sended G 08:15:54
+&G# Response: &G”¾´€€€†·€€€€ # Azimut: 45 Voltage: 12 at 08:15:55 20/10/2016
+Sended G 08:15:56
+&G# Response: &G”¾´€€€†·€€€€ # Azimut: 45 Voltage: 12 at 08:15:57 20/10/2016
+Sended G 08:15:58
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:15:59 20/10/2016
+Sended G 08:16:00
+&G# Response: &G”¾´€€€†µ€€€€ # Azimut: 45 Voltage: 12 at 08:16:01 20/10/2016
+Sended G 08:16:02
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:16:03 20/10/2016
+Sended G 08:16:04
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:16:05 20/10/2016
+Sended G 08:16:06
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:16:08 20/10/2016
+Sended G 08:16:09
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:16:10 20/10/2016
+Sended G 08:16:11
+&G# Response: &G”¾´€€€†¶€€€€ # Azimut: 45 Voltage: 12 at 08:16:12 20/10/2016
+Sended G 08:16:13
+&G# Response: &G”¾´€€€†·€€€€ # Azimut: 45 Voltage: 12 at 08:16:14 20/10/2016
+Error launching the camera 08:17:18
+Error launching the camera 08:32:04
+Error launching the camera 08:37:31
+Error launching the camera 08:39:20
+Error launching the camera 08:41:24
+Error launching the camera 08:42:30
+Error launching the camera 08:44:29
+Error launching the camera 08:44:42
+Error launching the camera 08:45:54
+Error launching the camera 08:47:26
+Error launching the camera 08:49:31
+Error launching the camera 08:50:56
+Error launching the camera 08:52:12
+Error launching the camera 08:53:17
+Error launching the camera 08:56:04
+Error launching the camera 08:56:51
+Error launching the camera 09:00:03
+Error launching the camera 09:01:52
+Error launching the camera 09:04:28
+Error launching the camera 09:07:14
+Error launching the camera 09:15:45
+Error launching the camera 09:12:25
+Error launching the camera 15:03:31
+Error launching the camera 07:41:33
+Error launching the camera 07:25:56
+Error launching the camera 07:31:03
+Error launching the camera 07:45:21

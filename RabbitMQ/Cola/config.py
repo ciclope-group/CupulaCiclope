@@ -1,4 +1,4 @@
 me = "cupula"
 list = ["meteor","telescopio"]
-urlServer="192.168.1.239"
+urlServer="venus.datsi.fi.upm.es"
 severity=["critical","info"]

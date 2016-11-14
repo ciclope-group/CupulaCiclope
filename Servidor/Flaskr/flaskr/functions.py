@@ -9,6 +9,7 @@ from messageObject import messageObject
 from tinydb import TinyDB, where,Query
 import json
 class system:
+        _logged_=""
         _threadStopper_=""
         _thread_=""
 	task_json=""
@@ -96,16 +97,17 @@ class system:
 
 	def send(self,message,ser):
 		if sc.board==1:
-                        if self.on==True:
-                                self.log("Sended "+message)
-                                self.mutex.acquire()
-                                x=messageObject(ser,message)
-                                x.send()
-                                self.mutex.release()
-                                if message == 'G':
-                                        self.refreshStatus(x,ser)
-                                x.logMessage()
-                                del x
+                        if (self._logged_ in 'admin') or (self._logged_ in 'guest'):
+                                if self.on==True:
+                                        self.log("Sended "+message)
+                                        self.mutex.acquire()
+                                        x=messageObject(ser,message)
+                                        x.send()
+                                        self.mutex.release()
+                                        if message == 'G':
+                                                self.refreshStatus(x,ser)
+                                        x.logMessage()
+                                        del x
 
 
 	def cameraServer(self):

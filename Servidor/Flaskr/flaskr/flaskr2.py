@@ -56,8 +56,10 @@ def cola(sy):
 # configuration
 DEBUG = False
 SECRET_KEY = 'development key'
-USERNAME = 'admin'
-PASSWORD = 'default'
+USERNAME_ADMIN = 'xxxx'
+PASSWORD_ADMIN = 'xxx'
+USERNAME_GUEST="xxxx"
+PASSWORD_GUEST="xxxx"
 # Starting our application
 app = Flask(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
@@ -108,16 +110,17 @@ t.start()
 @app.route('/api/cupula/montegancedo/task', methods=['POST'])
 def task():
 	error=None
-	"""global logged
-	if not logged:
-		abort(401)"""
-	if request.method == 'POST':
-		#cur = get_db().cursor()
-		message=request.get_json()
-		global task_id
-		task_id=task_id+1
-		sy.table.all()
-
+	global logged
+	print logged
+	if ((logged != 'admin') and (logged !='guest')):
+		abort(401)
+        if request.method == 'POST':
+                #cur = get_db().cursor()
+                message=request.get_json()
+                global task_id
+                task_id=task_id+1
+                sy.table.all()
+                print "YUHU2"
 		sy.table.insert({'id':task_id,'command':message,'time':time.strftime("%H:%M:%S"),'status':'non-completed'})
 		
 		sy.task_json=json.dumps({'id':task_id,'command':message['command'],'time':time.strftime("%H:%M:%S"), 'status':"non-completed"})
@@ -139,11 +142,12 @@ def task():
                         t.start()
                         
 		elif 'ON' in message:
-                        print "Entro"
+                        
+                        sy.on=True
                         sy._threadStopper_=threading.Event()
                         sy._thread_=threading.Timer(2,sy.checkRoutine,args=(ser,))
                         sy._thread_.daemon=True
-			sy.on=True
+			
 			
 			sy._thread_.start()
 		elif 'OFF' in message:
@@ -151,11 +155,13 @@ def task():
 			sy._threadStopper_.set()
 			
 		else:
-			try:
-				t = threading.Thread(target=sy.send, args=(message,ser,))
-				t.start()
-			except:
-				print "no lanza proceso"
+                        if logged in 'admin':
+                                try:
+                                        t = threading.Thread(target=sy.send, args=(message,ser,))
+                                        t.start()
+                                except:
+                                        print "no lanza proceso"
+                        
 		return sy.task_json
 @app.route('/api/cupula/montegancedo/', methods=['GET'])
 def status():
@@ -175,19 +181,48 @@ def returnTask(iden):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+        global USERNAME_ADMIN
+        global USERNAME_GUEST
+        global PASSWORD_GUEST
+        global PASSWORD_ADMIN
 	error = None
+	global logged
 	if request.method == 'POST':
-		if request.form['username'] != USERNAME:
-			str(request.form['username'])
+		"""if (request.form['username'] not in USERNAME_ADMIN)and (request.form['username'] not in USERNAME_GUEST):
+			logged  = ''
+                        sy._logged_=""
 			error = 'Invalid username'
-		elif request.form['password'] != PASSWORD:
-			error = 'Invalid password'
+			print error
+                        if (request.form['password'] != PASSWORD_GUEST)and(request.form['password'] != PASSWORD_ADMIN):
+                                logged  = ''
+                                sy._logged_=""
+                                error = 'Invalid password'
+                                print error
 		else:
-			global logged
-			logged  = True
+                        global logged
+                        if request.form['username'] in USERNAME_ADMIN:
+                                logged  = 'admin'
+                                sy._logged_="admin"
+                        if request.form['username'] in USERNAME_GUEST:
+                                logged  = 'guest'
+                                sy._logged_='guest'
 			#session['logged_in'] = True
 			flash('You were logged in')
-			return redirect(url_for('command'))
+			return redirect(url_for('command'))"""
+		if (request.form['username'] in USERNAME_ADMIN):
+                        if (request.form['password'] in PASSWORD_ADMIN):
+                                logged  = 'admin'
+                                sy._logged_='admin'
+                elif (request.form['username'] in USERNAME_GUEST):
+                        if (request.form['password'] in PASSWORD_GUEST):
+                                logged  = 'guest'
+                                sy._logged_='guest'
+                else:
+                        error="Invalid username or password"
+                        print error
+                        logged  = ''
+                        sy._logged_=''
+                print sy._logged_
 	return render_template('login.html', error=error)
 
 @app.route('/logout')

@@ -5,7 +5,7 @@ import sys
 import config as c
 
 #Establecemos las credenciales
-credentials = pika.PlainCredentials('admin', 'default')
+credentials = pika.PlainCredentials('venus', 'informaticaciclope')
 #Establecemos la conexion al servidor a traves del puerto 5672
 connection = pika.BlockingConnection(pika.ConnectionParameters(c.urlServer, 5672,'/',credentials))
 channel = connection.channel()
