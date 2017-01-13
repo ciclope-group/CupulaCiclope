@@ -177,10 +177,10 @@ def returnTask(iden):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-        global sc.USERNAME_ADMIN
+        """global sc.USERNAME_ADMIN
         global sc.USERNAME_GUEST
         global sc.PASSWORD_GUEST
-        global sc.PASSWORD_ADMIN
+        global sc.PASSWORD_ADMIN"""
 	error = None
 	global logged
 	if request.method == 'POST':
