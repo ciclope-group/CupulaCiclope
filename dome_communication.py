@@ -3,6 +3,7 @@ import serial
 import servidorConf as sc
 import sys
 
+import json #debug
 TICKS_FILE="./.encoder_ticks"
 class Dome:
     """Communication with the dome"""
@@ -41,10 +42,10 @@ class Dome:
 
     def __init__(self):
         self.encoder_ticks = self.get_ticks_from_file() # Number of ticks the encoder gives in a full turn
-        #try :
-        self.port = serial.Serial(sc.boardPort,9600,timeout=3)
-        #except:
-        #print("Error connecting to the board",file=sys.stderr)
+        try :
+            self.port = serial.Serial(sc.boardPort,9600,timeout=3)
+        except:
+            print("Error connecting to the board",file=sys.stderr)
 
     def get_ticks_from_file(self):
         """Returns full turn ticks, fetching the number from persistent storage"""
@@ -65,7 +66,7 @@ class Dome:
         """Stores the argument to persistent storage"""
         f = open(TICKS_FILE,"w")
         f.truncate(0)
-        f.write(str(123))
+        f.write(str(number))
         f.close()
 
 
@@ -76,14 +77,16 @@ class Dome:
 
         returns the result of executing process_response with the response the controller gives to message if the response is correct, None otherwise"""
         self.port.write(message.encode())
-        response = str(self.port.readline())
+        response = self.port.readline()#.decode()
+        #For debug
+        #print(response)
         return process_response(response)
 
 
 
     def process_empty_response(self,response):
         """Processer for those responses which give no extra information"""
-        if response == "&#": return 0
+        if response == b'&#': return 0
         return None
 
 
@@ -95,18 +98,19 @@ class Dome:
 
     def send_param_command(self,command,param):
         """Param commands are the ones which send extra information and recieve empty response"""
-        command = self.encode_long_command(comand,param)
+        command = self.encode_long_command(command,param)
         if command is None: return None
         return self.send_command(command,self.process_empty_response)
 
     def encode_long_command(self,command,arg):
         """Encodes the argument arg into command so that the controlles understands it and returns the encodes command if everything went ok or None otherwise"""
+        arg = int(arg)
         if arg < 0:
             print("Cannot send command: negative argument",file=sys.stderr)
             return None
 
         if arg > 0xFFFFF :
-            print("Cannot send command: argument too big",file=sys.stderr)
+            print("Cannot send command: argument too big: {0} > {1}".format(arg,0xfffff),file=sys.stderr)
             return None
         message_bytes = [] # values of the bytes corresponding to the argument
         while arg > 0:
@@ -151,7 +155,7 @@ class Dome:
             return None
         degrees = azimut % 360
         position = (degrees * self.encoder_ticks)/360
-        return position
+        return int(position)
 
     def position_to_azimuth(self,position):
         """Accepts dome position and translates to degrees"""
@@ -167,17 +171,18 @@ class Dome:
 
     def get_status(self):
         """Gets the status of the dome"""
-        def process_status(self,response):
+        def process_status(response):
             """Processor for the status of the dome"""
-            def decode_value(self,chars):
+            def decode_value(chars):
                 """decodes the value encoded in given chars"""
                 value = 0
                 for c in chars:
-                    value +=(ord(c) & ~8) # most significant bit must be zero
-                    value*=256
+                    value*=128 # 7 character codification
+                    value +=(c & ~0x80) # most significant bit must be zero
+                    
 
                 return value
-            def decode_last_action(self,char):
+            def decode_last_action(char):
                 """Decodes the current and last action the dome performed"""
                 current = {
                     0:"Running CCW",
@@ -199,8 +204,8 @@ class Dome:
                     12:"Motor stalled",
                     13:"Emergency stop"
                 }
-                current_action_value = ord(char)>>4 & 7 # bits 4,5,6
-                last_action_value = ord(char)&0xF# bits 0,1,2,3
+                current_action_value = char >> 4 & 7 # bits 4,5,6
+                last_action_value = char & 0xF# bits 0,1,2,3
                 if current_action_value in current:
                     current_action = current[current_action_value]
                 else:
@@ -213,7 +218,7 @@ class Dome:
                 return current_action, last_action
 
 
-            def decode_sensors(self,chars):
+            def decode_sensors(chars):
                 """Decodes de sensor status"""
                 statuses = {
                     10:"Home sensor",
@@ -226,17 +231,18 @@ class Dome:
 
 
             # response: &(G|T)LSxxxyyybbtttll#
-            current_action,last_action = self.decode_last_action(response[2])
+            current_action,last_action = decode_last_action(response[2])
+            
             # TODO shutter status decoding (response[3])
 
-            ticks = self.decode_value(response[4:7]) # positions 4,5,6 (xxx)
+            ticks = decode_value(response[4:7]) # positions 4,5,6 (xxx)
 
-            supply = self.decode_value(response[10:12])# positions 10,11 (bb)
+            supply = decode_value(response[10:12])# positions 10,11 (bb)
             supply = (supply*15)/1024 # given by vendor
 
-            sensors = self.decode_sensors(response[15:17])#positions 15,16(ll)
+            sensors =decode_sensors(response[15:17])#positions 15,16(ll)
 
-            if response[1] == "T": # Calibration status
+            if response[1] == ord("T"): # Calibration status
                 self.store_ticks_to_file(ticks)
                 self.encoder_ticks = ticks
                 ticks_name = "full_turn"
@@ -264,3 +270,5 @@ class Dome:
         status = self.get_status()
         while "full_turn" not in status:
             status = self.get_status()
+            # For debug
+            #print(json.dumps(status))
