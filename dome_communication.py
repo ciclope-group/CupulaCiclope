@@ -1,3 +1,4 @@
+
 import serial
 import servidorConf as sc
 import sys
@@ -68,38 +69,37 @@ class Dome:
         f.close()
 
 
-    def send_command(message,process_response):
+    def send_command(self,message,process_response):
         """Send a command to the dome controller
         message: string, command which will be sent to the contoller
         process_response: function(string), function to process the response.
 
         returns the result of executing process_response with the response the controller gives to message if the response is correct, None otherwise"""
-        self.port.write(message);
+        self.port.write(message.encode())
         response = str(self.port.readline())
-        if response[0] == "&" and response[-1] == "#":
-            return process_response(response)
+        return process_response(response)
+
+
+
+    def process_empty_response(self,response):
+        """Processer for those responses which give no extra information"""
+        if response == "&#": return 0
         return None
 
 
-    def process_empty_response(response):
-        """Processer for those responses which give no extra information"""
-        if response == "&#": return 0
-        return -1
-
-
-    def send_short_command(command):
+    def send_short_command(self,command):
         """Short commands are the ones which have no extra information in the request nor in the response"""
-        if command not in short_commands:
+        if command not in Dome.short_commands:
             return None
-        send_command(command,process_empty_response)
+        self.send_command(command,self.process_empty_response)
 
-    def send_param_command(command,param):
+    def send_param_command(self,command,param):
         """Param commands are the ones which send extra information and recieve empty response"""
-        command = encode_long_command(comand,param)
+        command = self.encode_long_command(comand,param)
         if command is None: return None
-        return send_command(command,process_empty_response)
+        return self.send_command(command,self.process_empty_response)
 
-    def encode_long_command(command,arg):
+    def encode_long_command(self,command,arg):
         """Encodes the argument arg into command so that the controlles understands it and returns the encodes command if everything went ok or None otherwise"""
         if arg < 0:
             print("Cannot send command: negative argument",file=sys.stderr)
@@ -120,29 +120,29 @@ class Dome:
 
     def open_shutter(self):
         """Opens the shutter"""
-        return send_short_command(OPEN)
+        return self.send_short_command(Dome.OPEN)
     def close_shutter(self):
         """Closes the sutter"""
-        return send_short_command(CLOSE)
+        return self.send_short_command(Dome.CLOSE)
     def go_home(self):
         """Sends the dome to home position"""
-        return send_short_command(GOHOME)
+        return self.send_short_command(Dome.GOHOME)
     def clockwise(self):
         """Makes the dome rotate clockwise"""
-        return send_short_command(CW)
+        return self.send_short_command(Dome.CW)
     def cclockwise(self):
         """Makes the dome rotate counter clockwise"""
-        return send_short_command(CCW)
+        return self.send_short_command(Dome.CCW)
     def stop(self):
         """Makes the dome stop rotating"""
-        return send_short_command(CCW)
+        return self.send_short_command(Dome.CCW)
     def emergency_stop(self):
         """Performs an emergency stop on the dome"""
-        return send_short_command(EMERGECY_BREAK)
+        return self.send_short_command(Dome.EMERGECY_BREAK)
     def calibrate(self):
-        """Performs calibration routine on the dome"""
-        return send_short_command(CALIBRATE)
-
+        """Asks the dome to perform calibration routine"""
+        return self.send_short_command(Dome.CALIBRATE)
+   
     def azimuth_to_position(self,azimut):
         """Accepts degrees and translates to the position the dome understands"""
 
@@ -169,7 +169,7 @@ class Dome:
         """Gets the status of the dome"""
         def process_status(self,response):
             """Processor for the status of the dome"""
-            def decode_value(chars):
+            def decode_value(self,chars):
                 """decodes the value encoded in given chars"""
                 value = 0
                 for c in chars:
@@ -177,7 +177,7 @@ class Dome:
                     value*=256
 
                 return value
-            def decode_last_action(char):
+            def decode_last_action(self,char):
                 """Decodes the current and last action the dome performed"""
                 current = {
                     0:"Running CCW",
@@ -213,7 +213,7 @@ class Dome:
                 return current_action, last_action
 
 
-            def decode_sensors(chars):
+            def decode_sensors(self,chars):
                 """Decodes de sensor status"""
                 statuses = {
                     10:"Home sensor",
@@ -226,15 +226,15 @@ class Dome:
 
 
             # response: &(G|T)LSxxxyyybbtttll#
-            current_action,last_action = decode_last_action(response[2])
+            current_action,last_action = self.decode_last_action(response[2])
             # TODO shutter status decoding (response[3])
 
-            ticks = decode_value(response[4:7]) # positions 4,5,6 (xxx)
+            ticks = self.decode_value(response[4:7]) # positions 4,5,6 (xxx)
 
-            supply = decode_value(response[10:12])# positions 10,11 (bb)
+            supply = self.decode_value(response[10:12])# positions 10,11 (bb)
             supply = (supply*15)/1024 # given by vendor
 
-            sensors = decode_sensors(response[15:17])#positions 15,16(ll)
+            sensors = self.decode_sensors(response[15:17])#positions 15,16(ll)
 
             if response[1] == "T": # Calibration status
                 self.store_ticks_to_file(ticks)
@@ -249,11 +249,18 @@ class Dome:
                 "sensors":sensors,
                 ticks_name:ticks
             }
-        return send_command(Dome.STATUS,process_status)
+        return self.send_command(Dome.STATUS,process_status)
 
 
     def set_home(self,degrees):
         """Sets "home" position of the dome"""
-        position = azimuth_to_position(degrees)
+        position = self.azimuth_to_position(degrees)
         if position is not None:
             return
+
+    def calibration_routine(self):
+        """Performs calibration routine and stores status"""
+        self.calibrate()
+        status = self.get_status()
+        while "full_turn" not in status:
+            status = self.get_status()
