@@ -9,10 +9,10 @@ class RabbitMQ_sender:
     my_name: string    Nombre del dispositivo. Se corresponde con el nombre del exchange al que va a publicar
     server_ip: string  Dirección IP del servidor de RabbitMQ (Opcional, 'localhost' por omisión).
     '''
-#        credentials = pika.PlainCredentials("venus","venuspass")
-#        connection = pika.BlockingConnection(
-#                pika.ConnectionParameters(server_ip,5672,'/',credentials))
-        connection = pika.BlockingConnection(pika.ConnectionParameters(server_ip))
+        self.credentials = pika.PlainCredentials("venus","venuspass")
+        connection = pika.BlockingConnection(
+#        connection = pika.BlockingConnection(pika.ConnectionParameters(server_ip))
+                pika.ConnectionParameters(server_ip,5672,'/',self.credentials))
         channel = connection.channel()
         self.my_name=my_name
         self.server_ip = server_ip
@@ -26,7 +26,7 @@ class RabbitMQ_sender:
     message: String                Cuerpo del mensaje
 '''
         connection = pika.BlockingConnection(
-                pika.ConnectionParameters(host=self.server_ip))
+                pika.ConnectionParameters(self.server_ip,5672,'/',self.credentials))
         channel = connection.channel()
 
         channel.basic_publish(exchange=self.my_name,
@@ -38,7 +38,7 @@ class RabbitMQ_sender:
 
 class RabbitMQ_receiver:
     'Clase de un dispositivo que recibirá mensajes de RabbitMQ'
-    def __init__(self,subscription,callback,ip_server='localhost'):
+    def __init__(self,subscription,callback,server_ip='localhost'):
         '''Inicialización. Parámetros:
     subscription: Subscription      Colas y prioridaded de las que se quiere leer
 
@@ -49,13 +49,16 @@ class RabbitMQ_receiver:
                 un mensaje. El parametro severity contendrá la importancia y
                 el parametro message, el cuerpo del mensaje.
 '''
+        self.credentials = pika.PlainCredentials("venus","venuspass")
+
         self.connection = pika.BlockingConnection(
-                pika.ConnectionParameters(host=ip_server))
+          #      pika.ConnectionParameters(host=server_ip))
+                pika.ConnectionParameters(server_ip,5672,'/',self.credentials))
         self.channel = self.connection.channel()
         self.callback = callback
 
         if subscription:
-            self.name=self.channel.queue_declare(exclusive=True).method.queue
+            self.name=self.channel.queue_declare("",exclusive=True).method.queue
             for s in subscription.subscriptions:
 
                 # Declarar el exchange del que se quiere recibir, por si se
@@ -70,10 +73,11 @@ class RabbitMQ_receiver:
     def start_consuming(self):
         def callback(ch,method,properties,body):
             return self.callback(method.routing_key,body.decode())
+        print(self.name)
 
-        self.channel.basic_consume(callback,
-                queue=self.name,
-                no_ack=True)
+        self.channel.basic_consume(on_message_callback=callback,
+        queue=self.name, #queue
+        auto_ack=False)#no-ack
         print("[x] Iniciado el consumo en {}".format(self.name))
         self.channel.start_consuming()
     def __del__(self):

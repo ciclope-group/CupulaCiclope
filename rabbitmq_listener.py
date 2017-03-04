@@ -12,8 +12,6 @@ class rmq_listener(threading.Thread):
         super().__init__() 
     def run(self):
         subscription = rmq.Subscription("montura:info")
-
-        l = rmq.RabbitMQ_receiver(subscription,self.callback,ip_server="172.17.0.2")
-    
+        l = rmq.RabbitMQ_receiver(subscription,self.callback,server_ip="192.168.1.5")
         l.start_consuming()
 
