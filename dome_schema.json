@@ -1,0 +1,43 @@
+{
+    "type":"object",
+    "properties":{
+	"current_action":{
+	    "type":"string",
+	    "enum":[
+		"Running CCW",
+		"Running CW",
+		"Stopped",
+		"Parking",
+		"Going home",
+		"At home",
+		"Calibrating"
+	    ]
+	},
+	"last_action":{
+	    "type":"string"
+	    "enum":[
+		"None",
+		"Run CW by user",
+		"Run CCW by user",
+		"Stop by user",
+		"Goto by user",
+		"Calibrate by user",
+		"Home by user",
+		"Motor stalled",
+		"Emergency stop"
+	    ]
+	},
+	"supply_voltage":{"type":"number"},
+	"sensors":{
+	    "type":"object"
+	    "properties":{
+		"Home sensor":{"type":"boolean"},
+		"Right button":{"type":"boolean"},
+		"Stop button":{"type":"boolean"},
+		"Left button":{"type":"boolean"}
+	    }
+	},
+	"position":{"type":"number"},
+	"full_turn"{"type":"number"}
+    }
+}
