@@ -2,9 +2,14 @@
 import serial
 import servidorConf as sc
 import sys
-
+import time
 import json #debug
+
+
 TICKS_FILE="./.encoder_ticks"
+RETRY=10 # number of times to retry serialconnection
+RETRY_INTERVAL=3 # seconds to wait between attempts
+
 class Dome:
     """Communication with the dome"""
 
@@ -14,39 +19,59 @@ class Dome:
     STOP="&S#"
     EMERGENCY_BREAK="&I#"
     GOHOME="&H#"
-    OPEN="&O#"
-    CLOSE="&C#"
+    OPEN_HIGH="&O#"
+    OPEN_LOW="&X#"
+    CLOSE_HIGH="&N#"
+    CLOSE_LOW="&X#"
     CALIBRATE = "&T#"
     STATUS="&G#"
-    GOTO="&Z{}#"
-    SYNC="&Y{}#"
-    SET_HOME="&h{}#"
-    SET_ENCODER_FACTOR="&E{}#"
-    SET_VMAX_AZIMUT="&J{}#"
-    SET_VMIN_AZIMUT="&K{}#"
-    SET_ACCEL_AZIMUT="&M{}#"
-    SET_RAMP_AZIMUT="&F{}#"
-    SET_TICKS_AZIMUT="&z{}#"
-    SET_REVERSE_AZIMUT="&K{}#"
+    DEL_EEPROM="&E#"
+    REBOOT_SHUTTER="&B#"
+    GOTO_AZ="&Z{}#"
+    GOTO_ALT="&A{}#"
+    SYNC_AZ="&Y{}#"
+    SYNC_ALT="&y{}#"
     SET_CLOSE_COND="&c{}#"
+    SET_OPEN_TIMEOUT="&t{}#"
+    SET_CONFIG="&a{}"
+    GET_CONFIG="&e#"
+    GET_VERSION="&V#"
+
     short_commands=[
         CCW,
         CW,
         STOP,
         EMERGENCY_BREAK,
         GOHOME,
-        OPEN,
-        CLOSE,
+        OPEN_HIGH,
+        CLOSE_HIGH,
+        OPEN_LOW,
+        CLOSE_LOW,
+        REBOOT_SHUTTER,
+        DEL_EEPROM,
+        GET_CONFIG,
+        GET_VERSION,
         CALIBRATE]
 
 
     def __init__(self):
         self.encoder_ticks = self.get_ticks_from_file() # Number of ticks the encoder gives in a full turn
-        try :
-            self.port = serial.Serial(sc.boardPort,9600,timeout=3)
-        except:
-            print("Error connecting to the board",file=sys.stderr)
-
+        control = 0 # control how many attempts to connect are performed
+        done = False # control if it a connection has been made
+        
+        while control < RETRY and not done:
+            try : 
+                self.port = serial.Serial(sc.boardPort,9600,timeout=3)
+            except:
+                print("Error connecting to the board, retrying...",file=sys.stderr)
+                control+=1
+                time.sleep(RETRY_INTERVAL)
+            else:
+                done = True
+        if not done:
+            print("Error connecting to the board after {} attempts".format(control),file=sys.stderr)
+            exit(-1)
+            
     def get_ticks_from_file(self):
         """Returns full turn ticks, fetching the number from persistent storage"""
         try:
@@ -76,8 +101,24 @@ class Dome:
         process_response: function(string), function to process the response.
 
         returns the result of executing process_response with the response the controller gives to message if the response is correct, None otherwise"""
-        self.port.write(message.encode())
-        response = self.port.readline()#.decode()
+
+        control = 0 # control how many attempts to connect are performed
+        done = False # control if it a connection has been made
+        
+        while control < RETRY and not done:
+            try : 
+                self.port.write(message.encode())
+                response = self.port.readline()#.decode()
+            except:
+                print("Error connecting to the board, retrying...",file=sys.stderr)
+                control+=1
+                time.sleep(RETRY_INTERVAL)
+            else:
+                done = True
+        if not done:
+            print("Error connecting to the board after {} attempts".format(control),file=sys.stderr)
+            exit(-1)
+            
         #For debug
         #print(response)
         return process_response(response)
@@ -124,10 +165,10 @@ class Dome:
 
     def open_shutter(self):
         """Opens the shutter"""
-        return self.send_short_command(Dome.OPEN)
+        return self.send_short_command(Dome.OPEN_HIGH)
     def close_shutter(self):
         """Closes the sutter"""
-        return self.send_short_command(Dome.CLOSE)
+        return self.send_short_command(Dome.CLOSE_HIGH)
     def go_home(self):
         """Sends the dome to home position"""
         return self.send_short_command(Dome.GOHOME)
@@ -163,10 +204,10 @@ class Dome:
             print("Need to calibrate",file=sys.stderr)
             return None
         degrees = (360*position)/self.encoder_ticks
-
+        return int(degrees)
     def goto(self,azimut):
         """Move the dome to given azimuth (in degrees)"""
-        return self.send_param_command(Dome.GOTO,
+        return self.send_param_command(Dome.GOTO_AZ,
                                        self.azimuth_to_position(azimut))
 
     def get_status(self):
@@ -200,7 +241,7 @@ class Dome:
                     3:"Stop by user",
                     4:"Goto by user",
                     5:"Calibrate by user",
-                    6:"home by user",
+                    6:"Home by user",
                     12:"Motor stalled",
                     13:"Emergency stop"
                 }
@@ -226,8 +267,8 @@ class Dome:
                     12:"Stop button",
                     13:"Left button"
                 }
-                #TODO find out codification
-                return "None"
+                
+                return {}
 
 
             # response: &(G|T)LSxxxyyybbtttll#
@@ -248,6 +289,7 @@ class Dome:
                 ticks_name = "full_turn"
             else:
                 ticks_name = "position"
+                ticks = self.position_to_azimuth(ticks)
             return{
                 "current_action":current_action,
                 "last_action":last_action,
