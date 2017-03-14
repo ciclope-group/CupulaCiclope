@@ -14,7 +14,7 @@
 	    ]
 	},
 	"last_action":{
-	    "type":"string"
+	    "type":"string",
 	    "enum":[
 		"None",
 		"Run CW by user",
@@ -29,7 +29,7 @@
 	},
 	"supply_voltage":{"type":"number"},
 	"sensors":{
-	    "type":"object"
+	    "type":"object",
 	    "properties":{
 		"Home sensor":{"type":"boolean"},
 		"Right button":{"type":"boolean"},
@@ -38,6 +38,6 @@
 	    }
 	},
 	"position":{"type":"number"},
-	"full_turn"{"type":"number"}
+	"full_turn":{"type":"number"}
     }
 }
