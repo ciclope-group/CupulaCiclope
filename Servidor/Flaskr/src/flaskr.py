@@ -205,12 +205,16 @@ def login():
 			#session['logged_in'] = True
 			flash('You were logged in')
 			return redirect(url_for('command'))"""
-		if (request.form['username'] in sc.USERNAME_ADMIN):
-                        if (request.form['password'] in sc.PASSWORD_ADMIN):
+#		if (request.form['username'] in sc.USERNAME_ADMIN):
+		if (request.form['username'] == sc.USERNAME_ADMIN):
+#                        if (request.form['password'] in sc.PASSWORD_ADMIN):
+                        if (request.form['password'] == sc.PASSWORD_ADMIN):
                                 logged  = 'admin'
                                 sy._logged_='admin'
-                elif (request.form['username'] in sc.USERNAME_GUEST):
-                        if (request.form['password'] in sc.PASSWORD_GUEST):
+#                elif (request.form['username'] in sc.USERNAME_GUEST):
+                elif (request.form['username'] == sc.USERNAME_GUEST):
+#                        if (request.form['password'] in sc.PASSWORD_GUEST):
+                        if (request.form['password'] == sc.PASSWORD_GUEST):
                                 logged  = 'guest'
                                 sy._logged_='guest'
                 else:
