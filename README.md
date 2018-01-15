@@ -11,14 +11,14 @@ We are developing several controlers for the dome, the telescope and a meteor st
 It is done a beta version from the messaging between the linux based controllers using [RabitMQ](https://www.rabbitmq.com/) and [python 2.7](https://www.python.org)
 
 ## API REST
-    -`GET /api/cupula/montegancedo`
-    -`GET /api/cupula/montegancedo/tasks/<task ID>`
-    -`POST /api/cupula/montegancedo/task`
-    -`POST /login`
+- `GET /api/cupula/montegancedo`
+- `GET /api/cupula/montegancedo/tasks/<task ID>`
+- `POST /api/cupula/montegancedo/task`
+- `POST /login`
 
 ### `GET /api/cupula/montegancedo`
-    Get information about the dome status.
-    Response:
+Get information about the dome status.
+Response:
 ~~~py
 {
     'lat'   : "40 24 22 N",
@@ -33,8 +33,8 @@ It is done a beta version from the messaging between the linux based controllers
 }
 ~~~
 ### `GET /api/cupula/montegancedo/tasks/<task ID>`
-    Get information about a specific task status.
-    Response:
+Get information about a specific task status.
+Response:
 ~~~py
 {
     'id'     : <task ID>,
@@ -42,17 +42,18 @@ It is done a beta version from the messaging between the linux based controllers
     'time'   : <time the task was received>,
     'status' : <completed | non-completed>
 }
-~~~
-    
+
+~~~ 
+
 ### `POST /api/cupula/montegancedo/task`
-    Create a new task. It's mandatory to be logged in.
-    Request:
+Create a new task. It's mandatory to be logged in.
+Request:
 ~~~py
 {
     'command':<command for the new task>
 }
 ~~~
-    Response:
+Response:
 ~~~py
 {
     'id'     : <task ID>,
@@ -62,15 +63,15 @@ It is done a beta version from the messaging between the linux based controllers
 }
 ~~~
 #### Commands
-    * SZ : TODO
-    * H  : Go home.
-    * followOn  : Start following the telescope mount.
-    * followOff : Stop following the telescope mount.
-    * Dx : Go to azimut x.
-    * ON : Enable dome.
-    * OFF: Disable dome.
+* SZ : TODO
+* H  : Go home.
+* followOn  : Start following the telescope mount.
+* followOff : Stop following the telescope mount.
+* Dx : Go to azimut x.
+* ON : Enable dome.
+* OFF: Disable dome.
 ### `POST /login`
-    Fields:
-    * `'username'`
-    * `'password'`
+Fields:
+* `'username'`
+* `'password'`
 
