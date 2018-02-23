@@ -15,10 +15,12 @@ import json
 import time
 from tinydb import TinyDB, where,Query
 import pika
+import rabbitmq_listener
 #Importamos el archivo de configuracion
 
 sy=system()
 
+mutex = threading.Lock()
 
 def cola(sy):
         #Establecemos las credenciales
@@ -103,6 +105,44 @@ t = threading.Thread(target=cola, args=(sy,))
 t.start()
 
 
+def process_message(message):
+	if 'SZ' in message:
+		sy.offset==sy.azimut
+	elif 'followOn' in message:
+		sy.follow=True
+	elif 'followOff' in message:
+		sy.follow=False
+	elif 'H' in message:
+		message='D'+str(sc.home)
+		t = threading.Thread(target=sy.goto, args=(message,ser,))
+ 		t.start()
+	elif 'D' in message:
+		t = threading.Thread(target=sy.goto, args=(message,ser,))
+		t.start()
+                        
+	elif 'ON' in message:
+		sy.on=True
+		sy._threadStopper_=threading.Event()
+		sy._thread_=threading.Timer(2,sy.checkRoutine,args=(ser,))
+		sy._thread_.daemon=True
+			
+			
+		sy._thread_.start()
+	elif 'OFF' in message:
+		sy.on=False
+		sy._threadStopper_.set()
+
+	else:
+		if logged in 'admin':
+			try:
+			t = threading.Thread(target=sy.send, args=(message,ser,))
+			t.start()
+			except:
+				print "Error launching thread"
+
+	return sy.task_json
+
+
 @app.route('/api/cupula/montegancedo/task', methods=['POST'])
 def task():
 	error=None
@@ -123,42 +163,9 @@ def task():
 		#print sy.task_json
 		message=str(message['command'])
 		#print message
-		if 'SZ' in message:
-                        sy.offset==sy.azimut
-                elif 'followOn' in message:
-                        sy.follow=True
-                elif 'followOff' in message:
-                        sy.follow=False
-		elif 'H' in message:
-			message='D'+str(sc.home)
-			t = threading.Thread(target=sy.goto, args=(message,ser,))
-                        t.start()
-		elif 'D' in message:
-			t = threading.Thread(target=sy.goto, args=(message,ser,))
-                        t.start()
-                        
-		elif 'ON' in message:
-                        
-                        sy.on=True
-                        sy._threadStopper_=threading.Event()
-                        sy._thread_=threading.Timer(2,sy.checkRoutine,args=(ser,))
-                        sy._thread_.daemon=True
-			
-			
-			sy._thread_.start()
-		elif 'OFF' in message:
-			sy.on=False
-			sy._threadStopper_.set()
-			
-		else:
-                        if logged in 'admin':
-                                try:
-                                        t = threading.Thread(target=sy.send, args=(message,ser,))
-                                        t.start()
-                                except:
-                                        print "Error launching thread"
-                        
-		return sy.task_json
+		mutex.acquire()
+		return_value = process_message(message)
+		mutex.release()
 @app.route('/api/cupula/montegancedo/', methods=['GET'])
 def status():
 	response_json=json.dumps({'lat':"40 24 22 N"  ,'long':"3 50 19 O" , 'name':"Observatorio Montegancedo",'status':{'Azimut':sy.azimut,'Laps':sy.vueltas, 'Voltage': sy.voltage, 'Direction':sy.direction}})
@@ -233,6 +240,22 @@ def logout():
 	flash('You were logged out')
 	return redirect(url_for('show_entries'))
 
+
+
+#==================================================
+#============= Parte del rabbitmq =================
+#==================================================
+
+def rmq_consume():
+	def callback(severity,message):
+		if severity == "info":
+			mutex.acquire()
+			process_message(message)
+			mutex.release()
+		else:
+			print("Critico")
+	t = rabbitmq_listener.rmq_listener(callback)
+	t.start()
 
 if __name__ == '__main__':
 	print "////////////// Starting Cupula Ciclope's server//////////////"
