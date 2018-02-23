@@ -19,7 +19,7 @@ import rabbitmq_listener
 #Importamos el archivo de configuracion
 
 sy=system()
-
+# Cerrojo para acceder a sy en exclusion mutua
 mutex = threading.Lock()
 
 def cola(sy):
@@ -42,11 +42,13 @@ def cola(sy):
                                routing_key=y)
         def callback(ch, method, properties, body):
                 print(" [x] %r" % (body))
+		mutex.acquire()
                 if sy.follow:
                         if 'D' in body:
                                 t = threading.Thread(target=sy.goto, args=(body,ser,))
                                 t.start()
-                                return
+		mutex.release()
+                               
 
         channel.basic_consume(callback,
                                 queue=sc.me,
@@ -70,6 +72,7 @@ task_id=len(sy.table)+1
 
 logged= None
 os.chdir('/home/cupula/CupulaCiclope/Servidor/Flaskr')
+
 sy.empaquetar()
 
 #Launching Camera server if sc.camera variable is active
@@ -152,9 +155,11 @@ def task():
 		abort(401)
         if request.method == 'POST':
                 #cur = get_db().cursor()
+		mutex.acquire()
                 message=request.get_json()
                 global task_id
                 task_id=task_id+1
+		
                 sy.table.all()
                 
 		sy.table.insert({'id':task_id,'command':message,'time':time.strftime("%H:%M:%S"),'status':'non-completed'})
@@ -163,16 +168,18 @@ def task():
 		#print sy.task_json
 		message=str(message['command'])
 		#print message
-		mutex.acquire()
 		return_value = process_message(message)
 		mutex.release()
 @app.route('/api/cupula/montegancedo/', methods=['GET'])
 def status():
+	mutex.acquire()
 	response_json=json.dumps({'lat':"40 24 22 N"  ,'long':"3 50 19 O" , 'name':"Observatorio Montegancedo",'status':{'Azimut':sy.azimut,'Laps':sy.vueltas, 'Voltage': sy.voltage, 'Direction':sy.direction}})
+	mutex.release()
 	return response_json	
 		
 @app.route('/api/cupula/montegancedo/tasks/<int:iden>', methods=['GET'])
 def returnTask(iden):
+	mutex.acquire()
 	s=Query()
 	x=sy.table.get(s.id==iden)
 	print x
@@ -180,7 +187,9 @@ def returnTask(iden):
 		abort(404)
 	print x['id']
 	sy.task_json=json.dumps({'id':x['id'],'command':x['command']['command'],'time':x['time'],'status':x['status']})
-	return sy.task_json
+	return_value = sy.task_json
+	mutex.release()
+	return return_value
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -259,4 +268,5 @@ def rmq_consume():
 
 if __name__ == '__main__':
 	print "////////////// Starting Cupula Ciclope's server//////////////"
+	rmq_consume()
 	app.run(host='0.0.0.0',port=80)
