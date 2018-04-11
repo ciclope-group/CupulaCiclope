@@ -40,14 +40,17 @@ class Dome:
 
     def __init__(self):
         self.encoder_ticks = self.get_ticks_from_file() # Number of ticks the encoder gives in a full turn
-        # try :
-        #     self.port = serial.Serial(sc.boardPort,9600,timeout=3)
-        # except:
-        #    print("Error connecting to the board",file=sys.stderr)
+        #try :
+        self.port = serial.Serial(sc.boardPort,9600,timeout=3)
+        #except:
+        #print("Error connecting to the board",file=sys.stderr)
 
     def get_ticks_from_file(self):
         """Returns full turn ticks, fetching the number from persistent storage"""
-        f = open(TICKS_FILE)
+        try:
+            f = open(TICKS_FILE)
+        except:
+            return 1000
         line = f.readline()
         f.close()
         if line == "":
@@ -253,3 +256,4 @@ class Dome:
         """Sets "home" position of the dome"""
         position = azimuth_to_position(degrees)
         if position is not None:
+            return

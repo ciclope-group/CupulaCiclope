@@ -1,0 +1,2 @@
+boardPort="/dev/ttyUSB0"
+

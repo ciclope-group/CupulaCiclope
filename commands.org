@@ -1,0 +1,99 @@
+* Operation
+
+| Command  | Response           | Meaning                 |
+|----------+--------------------+-------------------------|
+| &O#      | &#                 | Open shutter            |
+| &C#      | &#                 | Close shutter           |
+| &L#      | &#                 | Left (Run CCW)          |
+| &R#      | &#                 | Right (Run CW)          |
+| &S#      | &#                 | Stop                    |
+| &I#      | &#                 | Emergency stop          |
+| &ZXXXXX# | &#                 | Goto azimuth            |
+| &H#      | &#                 | Go home                 |
+| &T#      | &#                 | Calibration             |
+| &YXXXXX# | &#                 | Azimuth synchronization |
+| &G#      | &GLSxxxyyybbtttll# | Get status              |
+| &G#      | &TLSxxxyyybbtttll# | Get status              |
+The system only runs calibration (&T# command) if the dome is at home (active sensor home).
+
+* Settings
+
+| Command  | Response | Meaning                     |
+|----------+----------+-----------------------------|
+| &hXXXXX# | &#       | Set home                    |
+| &EXXXXX# | &#       | Set azimuth enconder factor |
+| &JXXXXX# | &#       | Set Vmax azimuth            |
+| &KXXXXX# | &#       | Set Vmin azimuth            |
+| &MXXXXX# | &#       | Set azimuth acceleration    |
+| &FXXXXX# | &#       | Set azimuth ramp            |
+| &zXXXXX# | &#       | Set azimuth ticks           |
+| &UXXXXX# | &#       | Set reverse motor az        |
+| &cXXXXX# | &#       | Set closing condition       |
+
+* Other
+
+| Command | Response      | Meaning |
+|---------+---------------+---------|
+| &V#     | &Vxx.xxyy.yy# | Version |
+
+* &(G|T)LSxxxyyybbtttll#: Get status response
+The response to the "Get status" command is normally  &GLSxxxyyybbtttll#.
+If a calibration routine has just been performed, the response is &TLSxxxyyybbtttll#.
+
+The response is coded as follows
+** L: last action and dome status
+   L = 0x80 OR (status_az << 4) OR last_action
+
+*** Status az:
+- RUN_CCW	0	running  counterclockwise
+- STOPPED	1	stopped
+- RUN_CW	2	running clockwise
+- MOVING_TO	3	moving to
+- PARKING         4	parking
+- GOING_HOME      5	Going home
+- AT_HOME         6	at home
+- CALIB_AZ        7	calibrating
+
+*** last_action:
+- NONE            0	none
+- RUNR_BU         1	run CW by user
+- RUNL_BU         2	run CCW by user
+- STOP_BU         3	stop by user
+- GOTO_BU         4	go to by user
+- CALIB_BU        5	calibrate by user
+- HOME_BU         6	home by user
+- STOP_LK         12	stop motor stalled
+- EM_STOP         13	emergency stop
+** S: last action and shutter status
+   Ignore
+** xxx: dome position
+   Codes in three characters the current position of the dome.
+
+   The coding is made using the seven least significant bits of each
+   character and setting to one the most significant one.
+
+   So, if xxx was 0x8095F3 (10000000 10010101 11110011) it would be
+   coding the binary 0000000 0010101 1110011 =  0xAF3 = 2803.
+   If the response to the "Get status" command (&G#) begins with &T instead
+   of  &G is because a calibration routine has just been performed, and the
+   xxx field doesn't mean the dome position but the number of encoder ticks
+   in a round i.e in 360 degrees.
+
+**  yyy: shutter position
+    Ignore.
+** bb: motor supply voltage
+   Codes in two characters the voltage it is being supplied to the motor (12V).
+
+   The coding is similar to xxx, the most significant bit is set to one.
+   To translate the value to volts, it is enough to multiply it by 15 and
+   divide by 1024.
+   This way, if bb was 0x86C4 (10000110 11000100), corresponding the binary
+   0000110 1000100 = 0x344 =  836, which in volts is 12,25V.
+
+** ttt: shutter close temporization
+   Ignorar
+** ll: Button and sensor status
+   - 10      -->     Home sensor
+   - 11      -->     Right button
+   - 12      -->     Stop button
+   - 13      -->     Left button
