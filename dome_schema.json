@@ -14,7 +14,7 @@
 	    ]
 	},
 	"last_action":{
-	    "type":"string"
+	    "type":"string",
 	    "enum":[
 		"None",
 		"Run CW by user",
@@ -38,6 +38,6 @@
 	    }
 	},
 	"position":{"type":"number"},
-	"full_turn"{"type":"number"}
+	"full_turn":{"type":"number"}
     }
 }
