@@ -29,7 +29,7 @@
 	},
 	"supply_voltage":{"type":"number"},
 	"sensors":{
-	    "type":"object"
+	    "type":"object",
 	    "properties":{
 		"Home sensor":{"type":"boolean"},
 		"Right button":{"type":"boolean"},
